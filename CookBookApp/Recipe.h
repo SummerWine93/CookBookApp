@@ -1,9 +1,9 @@
 //
 //  Recipe.h
-//  CookBook v1
+//  CookBookApp
 //
-//  Created by User on 7/24/15.
-//  Copyright (c) 2015 Delphi LCC. All rights reserved.
+//  Created by User on 7/30/15.
+//  Copyright (c) 2015 User. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -17,9 +17,9 @@
 @property (nonatomic, retain) id image;
 @property (nonatomic, retain) NSString * ingredients;
 @property (nonatomic, retain) NSNumber * isFavourite;
+@property (nonatomic, retain) NSNumber * isUserGenerated;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * steps;
-@property (nonatomic, retain) NSNumber * isUserGenerated;
 @property (nonatomic, retain) NSDate * timeOfCreation;
 @property (nonatomic, retain) RecipeCategory *category;
 

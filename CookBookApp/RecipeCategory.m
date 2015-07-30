@@ -1,9 +1,9 @@
 //
 //  RecipeCategory.m
-//  CookBook v1
+//  CookBookApp
 //
-//  Created by User on 7/24/15.
-//  Copyright (c) 2015 Delphi LCC. All rights reserved.
+//  Created by User on 7/30/15.
+//  Copyright (c) 2015 User. All rights reserved.
 //
 
 #import "RecipeCategory.h"

@@ -1,9 +1,9 @@
 //
 //  RecipeCategory.h
-//  CookBook v1
+//  CookBookApp
 //
-//  Created by User on 7/24/15.
-//  Copyright (c) 2015 Delphi LCC. All rights reserved.
+//  Created by User on 7/30/15.
+//  Copyright (c) 2015 User. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,19 +14,14 @@
 @interface RecipeCategory : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSOrderedSet *recipe;
+@property (nonatomic, retain) NSSet *recipe;
 @end
 
 @interface RecipeCategory (CoreDataGeneratedAccessors)
 
-- (void)insertObject:(Recipe *)value inRecipeAtIndex:(NSUInteger)idx;
-- (void)removeObjectFromRecipeAtIndex:(NSUInteger)idx;
-- (void)insertRecipe:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
-- (void)removeRecipeAtIndexes:(NSIndexSet *)indexes;
-- (void)replaceObjectInRecipeAtIndex:(NSUInteger)idx withObject:(Recipe *)value;
-- (void)replaceRecipeAtIndexes:(NSIndexSet *)indexes withRecipe:(NSArray *)values;
 - (void)addRecipeObject:(Recipe *)value;
 - (void)removeRecipeObject:(Recipe *)value;
-- (void)addRecipe:(NSOrderedSet *)values;
-- (void)removeRecipe:(NSOrderedSet *)values;
+- (void)addRecipe:(NSSet *)values;
+- (void)removeRecipe:(NSSet *)values;
+
 @end

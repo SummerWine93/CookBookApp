@@ -1,28 +1,34 @@
 //
 //  AppDelegate.h
-//  CookBookApp
+//  CookBook v1
 //
-//  Created by User on 7/30/15.
-//  Copyright (c) 2015 User. All rights reserved.
+//  Created by User on 6/16/15.
+//  Copyright (c) 2015 Delphi LCC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NSFetchedResultsControllerDelegate>{
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    UIAlertView *alert;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic) NSFetchedResultsController *categoryFetchedResultsController;
 @property NSManagedObjectContext *context;
+@property BOOL showFavouriteOnly;
 
-- (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
-+ (AppDelegate *)appDelegate;
+-(void)saveContext;
+-(NSURL *)applicationsDocumentsDirectory;
++(AppDelegate *)appDelegate;
 
 @end
 
