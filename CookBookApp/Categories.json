@@ -1,0 +1,9 @@
+[
+  {"name": "First course", "recipe": null},
+  {"name": "Main course", "recipe":  null},
+  {"name": "Desserts", "recipe": null},
+  {"name": "Drinks", "recipe": null},
+  {"name": "Salads", "recipe": null},
+  {"name": "Other", "recipe": null}
+ 
+]
