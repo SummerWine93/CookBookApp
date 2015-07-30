@@ -33,7 +33,7 @@
         [loadInfoActivityView startAnimating];
         
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            //[self firstInit];
+            [self firstInit];
         });
         [[NSUserDefaults standardUserDefaults] synchronize];
         [loadInfoActivityView stopAnimating];

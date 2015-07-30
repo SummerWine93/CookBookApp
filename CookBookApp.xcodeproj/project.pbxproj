@@ -52,6 +52,15 @@
 		CE1934281B6A4078002F4FCB /* Bookmark-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CE19341E1B6A4078002F4FCB /* Bookmark-25.png */; };
 		CE1934361B6A5353002F4FCB /* RecipeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934351B6A5353002F4FCB /* RecipeCategory.m */; };
 		CE1934391B6A5354002F4FCB /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934381B6A5354002F4FCB /* Recipe.m */; };
+		CE1934761B6A58EA002F4FCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934751B6A58EA002F4FCB /* AppDelegate.m */; };
+		CE1934781B6A58EA002F4FCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934771B6A58EA002F4FCB /* main.m */; };
+		CE19347B1B6A58EA002F4FCB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19347A1B6A58EA002F4FCB /* ViewController.m */; };
+		CE1934801B6A58EA002F4FCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE19347F1B6A58EA002F4FCB /* Images.xcassets */; };
+		CE1934831B6A58EA002F4FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1934811B6A58EA002F4FCB /* Main.storyboard */; };
+		CE19348F1B6A58EA002F4FCB /* CookBookAppBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19348E1B6A58EA002F4FCB /* CookBookAppBuilderTests.m */; };
+		CE1934981B6A673D002F4FCB /* RecipesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934971B6A673D002F4FCB /* RecipesWindowController.m */; };
+		CE19349B1B6A6BCA002F4FCB /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19349A1B6A6BCA002F4FCB /* RecipeTableViewController.m */; };
+		CEE1349C1B6A751C00FD7E10 /* CookBookApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1934031B6A3C88002F4FCB /* CookBookApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +70,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = CE1933871B6A37EF002F4FCB;
 			remoteInfo = CookBookApp;
+		};
+		CE1934891B6A58EA002F4FCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE1933801B6A37EF002F4FCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE19346F1B6A58EA002F4FCB;
+			remoteInfo = CookBookAppBuilder;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -128,6 +144,22 @@
 		CE1934351B6A5353002F4FCB /* RecipeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCategory.m; sourceTree = "<group>"; };
 		CE1934371B6A5354002F4FCB /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
 		CE1934381B6A5354002F4FCB /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		CE1934701B6A58EA002F4FCB /* CookBookAppBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookBookAppBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1934731B6A58EA002F4FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE1934741B6A58EA002F4FCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CE1934751B6A58EA002F4FCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CE1934771B6A58EA002F4FCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE1934791B6A58EA002F4FCB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CE19347A1B6A58EA002F4FCB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CE19347F1B6A58EA002F4FCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CE1934821B6A58EA002F4FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE1934881B6A58EA002F4FCB /* CookBookAppBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookBookAppBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE19348D1B6A58EA002F4FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE19348E1B6A58EA002F4FCB /* CookBookAppBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookBookAppBuilderTests.m; sourceTree = "<group>"; };
+		CE1934961B6A673D002F4FCB /* RecipesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesWindowController.h; sourceTree = "<group>"; };
+		CE1934971B6A673D002F4FCB /* RecipesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesWindowController.m; sourceTree = "<group>"; };
+		CE1934991B6A6BCA002F4FCB /* RecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewController.h; sourceTree = "<group>"; };
+		CE19349A1B6A6BCA002F4FCB /* RecipeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +177,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE19346D1B6A58EA002F4FCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1934851B6A58EA002F4FCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -153,6 +199,8 @@
 			children = (
 				CE19338A1B6A37EF002F4FCB /* CookBookApp */,
 				CE1933A71B6A37EF002F4FCB /* CookBookAppTests */,
+				CE1934711B6A58EA002F4FCB /* CookBookAppBuilder */,
+				CE19348B1B6A58EA002F4FCB /* CookBookAppBuilderTests */,
 				CE1933891B6A37EF002F4FCB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -162,6 +210,8 @@
 			children = (
 				CE1933881B6A37EF002F4FCB /* CookBookApp.app */,
 				CE1933A41B6A37EF002F4FCB /* CookBookAppTests.xctest */,
+				CE1934701B6A58EA002F4FCB /* CookBookAppBuilder.app */,
+				CE1934881B6A58EA002F4FCB /* CookBookAppBuilderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,6 +371,50 @@
 			name = TableCells;
 			sourceTree = "<group>";
 		};
+		CE1934711B6A58EA002F4FCB /* CookBookAppBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				CE1934741B6A58EA002F4FCB /* AppDelegate.h */,
+				CE1934751B6A58EA002F4FCB /* AppDelegate.m */,
+				CE1934791B6A58EA002F4FCB /* ViewController.h */,
+				CE19347A1B6A58EA002F4FCB /* ViewController.m */,
+				CE19347F1B6A58EA002F4FCB /* Images.xcassets */,
+				CE1934811B6A58EA002F4FCB /* Main.storyboard */,
+				CE1934721B6A58EA002F4FCB /* Supporting Files */,
+				CE1934961B6A673D002F4FCB /* RecipesWindowController.h */,
+				CE1934971B6A673D002F4FCB /* RecipesWindowController.m */,
+				CE1934991B6A6BCA002F4FCB /* RecipeTableViewController.h */,
+				CE19349A1B6A6BCA002F4FCB /* RecipeTableViewController.m */,
+			);
+			path = CookBookAppBuilder;
+			sourceTree = "<group>";
+		};
+		CE1934721B6A58EA002F4FCB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE1934731B6A58EA002F4FCB /* Info.plist */,
+				CE1934771B6A58EA002F4FCB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE19348B1B6A58EA002F4FCB /* CookBookAppBuilderTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE19348E1B6A58EA002F4FCB /* CookBookAppBuilderTests.m */,
+				CE19348C1B6A58EA002F4FCB /* Supporting Files */,
+			);
+			path = CookBookAppBuilderTests;
+			sourceTree = "<group>";
+		};
+		CE19348C1B6A58EA002F4FCB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE19348D1B6A58EA002F4FCB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,6 +453,41 @@
 			productReference = CE1933A41B6A37EF002F4FCB /* CookBookAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CE19346F1B6A58EA002F4FCB /* CookBookAppBuilder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE1934901B6A58EA002F4FCB /* Build configuration list for PBXNativeTarget "CookBookAppBuilder" */;
+			buildPhases = (
+				CE19346C1B6A58EA002F4FCB /* Sources */,
+				CE19346D1B6A58EA002F4FCB /* Frameworks */,
+				CE19346E1B6A58EA002F4FCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CookBookAppBuilder;
+			productName = CookBookAppBuilder;
+			productReference = CE1934701B6A58EA002F4FCB /* CookBookAppBuilder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE1934871B6A58EA002F4FCB /* CookBookAppBuilderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE1934931B6A58EA002F4FCB /* Build configuration list for PBXNativeTarget "CookBookAppBuilderTests" */;
+			buildPhases = (
+				CE1934841B6A58EA002F4FCB /* Sources */,
+				CE1934851B6A58EA002F4FCB /* Frameworks */,
+				CE1934861B6A58EA002F4FCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE19348A1B6A58EA002F4FCB /* PBXTargetDependency */,
+			);
+			name = CookBookAppBuilderTests;
+			productName = CookBookAppBuilderTests;
+			productReference = CE1934881B6A58EA002F4FCB /* CookBookAppBuilderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -374,6 +503,13 @@
 					CE1933A31B6A37EF002F4FCB = {
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = CE1933871B6A37EF002F4FCB;
+					};
+					CE19346F1B6A58EA002F4FCB = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					CE1934871B6A58EA002F4FCB = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = CE19346F1B6A58EA002F4FCB;
 					};
 				};
 			};
@@ -392,6 +528,8 @@
 			targets = (
 				CE1933871B6A37EF002F4FCB /* CookBookApp */,
 				CE1933A31B6A37EF002F4FCB /* CookBookAppTests */,
+				CE19346F1B6A58EA002F4FCB /* CookBookAppBuilder */,
+				CE1934871B6A58EA002F4FCB /* CookBookAppBuilderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -439,6 +577,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE19346E1B6A58EA002F4FCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1934801B6A58EA002F4FCB /* Images.xcassets in Resources */,
+				CE1934831B6A58EA002F4FCB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1934861B6A58EA002F4FCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -473,6 +627,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE19346C1B6A58EA002F4FCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE19349B1B6A6BCA002F4FCB /* RecipeTableViewController.m in Sources */,
+				CE19347B1B6A58EA002F4FCB /* ViewController.m in Sources */,
+				CE1934781B6A58EA002F4FCB /* main.m in Sources */,
+				CE1934761B6A58EA002F4FCB /* AppDelegate.m in Sources */,
+				CEE1349C1B6A751C00FD7E10 /* CookBookApp.xcdatamodeld in Sources */,
+				CE1934981B6A673D002F4FCB /* RecipesWindowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1934841B6A58EA002F4FCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE19348F1B6A58EA002F4FCB /* CookBookAppBuilderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -481,7 +656,23 @@
 			target = CE1933871B6A37EF002F4FCB /* CookBookApp */;
 			targetProxy = CE1933A51B6A37EF002F4FCB /* PBXContainerItemProxy */;
 		};
+		CE19348A1B6A58EA002F4FCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE19346F1B6A58EA002F4FCB /* CookBookAppBuilder */;
+			targetProxy = CE1934891B6A58EA002F4FCB /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE1934811B6A58EA002F4FCB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE1934821B6A58EA002F4FCB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CE1933AC1B6A37EF002F4FCB /* Debug */ = {
@@ -620,6 +811,80 @@
 			};
 			name = Release;
 		};
+		CE1934911B6A58EA002F4FCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CookBookAppBuilder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CE1934921B6A58EA002F4FCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CookBookAppBuilder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CE1934941B6A58EA002F4FCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CookBookAppBuilderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CookBookAppBuilder.app/Contents/MacOS/CookBookAppBuilder";
+			};
+			name = Debug;
+		};
+		CE1934951B6A58EA002F4FCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CookBookAppBuilderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CookBookAppBuilder.app/Contents/MacOS/CookBookAppBuilder";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -639,6 +904,7 @@
 				CE1933B01B6A37EF002F4FCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE1933B11B6A37EF002F4FCB /* Build configuration list for PBXNativeTarget "CookBookAppTests" */ = {
 			isa = XCConfigurationList;
@@ -647,6 +913,25 @@
 				CE1933B31B6A37EF002F4FCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE1934901B6A58EA002F4FCB /* Build configuration list for PBXNativeTarget "CookBookAppBuilder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE1934911B6A58EA002F4FCB /* Debug */,
+				CE1934921B6A58EA002F4FCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE1934931B6A58EA002F4FCB /* Build configuration list for PBXNativeTarget "CookBookAppBuilderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE1934941B6A58EA002F4FCB /* Debug */,
+				CE1934951B6A58EA002F4FCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
