@@ -23,14 +23,6 @@
                             <rect key="frame" x="-2" y="2" width="125" height="90"/>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label fhifhoeifeirhfgoerihgoerighe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvp-wp-Rpv">
-                        <rect key="frame" x="138" y="14" width="421" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="widthClass=compact" misplaced="YES">
-                            <rect key="frame" x="131" y="36" width="181" height="21"/>
-                        </variation>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-Kt-7cp">
                         <rect key="frame" x="99" y="61" width="25" height="25"/>
                         <state key="normal">
@@ -40,6 +32,14 @@
                             <rect key="frame" x="91" y="61" width="25" height="25"/>
                         </variation>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label fhifhoeifeirhfgoerihgoerighecfshdfjsdfvjshdycfjsyfgsjyfgeyfgwefhvjwyefywfgwyefwjhfvwjhefywefgwjefy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvp-wp-Rpv">
+                        <rect key="frame" x="138" y="14" width="421" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="widthClass=compact" misplaced="YES">
+                            <rect key="frame" x="131" y="36" width="181" height="21"/>
+                        </variation>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0I-Zv-gfc">
                         <rect key="frame" x="138" y="63" width="421" height="21"/>
                         <string key="text">Label fhifhoeifeirhfgoerihgoerigheb gurhg9uhee98gh9egheu ehg9erhg9ehge9hrg9erhg erhgt98erhg8rhg9eh er98ghe9rg9e8rge98rghe9 er8gu9 er</string>

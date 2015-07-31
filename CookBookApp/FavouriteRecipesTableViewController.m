@@ -16,7 +16,7 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated{    
+-(void)viewWillAppear:(BOOL)animated{
     NSPredicate *favouritePredicate = [NSPredicate predicateWithFormat:@"isFavourite == %@", [NSNumber numberWithBool:YES]];
     [[self.fetchedResultsController fetchRequest] setPredicate:favouritePredicate];
     [NSFetchedResultsController deleteCacheWithName:@"Master"];
@@ -24,7 +24,7 @@
     [self.tableView reloadData];
     
     favouritePredicate = nil;
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
 }
 
 @end

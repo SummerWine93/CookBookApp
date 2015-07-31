@@ -160,7 +160,15 @@ const int deleteAlertTag = 999;
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:object.image];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
-    self.recipeImage.image = image;
+    if (image != nil) {
+        self.recipeImage.image = image;
+    }
+    else{
+        self.recipeImage.image = [UIImage imageNamed:@"defaultImage.jpg"];
+        [self.view setNeedsDisplay];
+        [self updateRecipe];
+        
+    }
     
     CGSize sizeForRecipeSteps = [self.recipeSteps sizeThatFits: self.recipeSteps.textContainer.size];
     self.recipeStepsHeight.constant = sizeForRecipeSteps.height;

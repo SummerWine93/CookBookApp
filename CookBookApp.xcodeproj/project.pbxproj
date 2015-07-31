@@ -12,7 +12,6 @@
 		CE1933971B6A37EF002F4FCB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1933961B6A37EF002F4FCB /* ViewController.m */; };
 		CE19339C1B6A37EF002F4FCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE19339B1B6A37EF002F4FCB /* Images.xcassets */; };
 		CE1933AB1B6A37EF002F4FCB /* CookBookAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1933AA1B6A37EF002F4FCB /* CookBookAppTests.m */; };
-		CE1933B51B6A3818002F4FCB /* CookBookData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CE1933B41B6A3818002F4FCB /* CookBookData.sqlite */; };
 		CE1933DB1B6A389D002F4FCB /* AddRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1933B81B6A389D002F4FCB /* AddRecipeViewController.m */; };
 		CE1933DC1B6A389D002F4FCB /* AllRecipesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1933BA1B6A389D002F4FCB /* AllRecipesTableViewController.m */; };
 		CE1933E01B6A389D002F4FCB /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1933BE1B6A389D002F4FCB /* Categories.json */; };
@@ -61,6 +60,8 @@
 		CE1934981B6A673D002F4FCB /* RecipesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934971B6A673D002F4FCB /* RecipesWindowController.m */; };
 		CE19349B1B6A6BCA002F4FCB /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19349A1B6A6BCA002F4FCB /* RecipeTableViewController.m */; };
 		CEE1349C1B6A751C00FD7E10 /* CookBookApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1934031B6A3C88002F4FCB /* CookBookApp.xcdatamodeld */; };
+		CEE134B51B6B7DF700FD7E10 /* CookBookAppData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEE134B41B6B7DF700FD7E10 /* CookBookAppData.sqlite */; };
+		CEE134B71B6B7EEE00FD7E10 /* defaultCellImage.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE134B61B6B7EEE00FD7E10 /* defaultCellImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +93,6 @@
 		CE1933A41B6A37EF002F4FCB /* CookBookAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookBookAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1933A91B6A37EF002F4FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE1933AA1B6A37EF002F4FCB /* CookBookAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookBookAppTests.m; sourceTree = "<group>"; };
-		CE1933B41B6A3818002F4FCB /* CookBookData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CookBookData.sqlite; sourceTree = "<group>"; };
 		CE1933B71B6A389D002F4FCB /* AddRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecipeViewController.h; sourceTree = "<group>"; };
 		CE1933B81B6A389D002F4FCB /* AddRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecipeViewController.m; sourceTree = "<group>"; };
 		CE1933B91B6A389D002F4FCB /* AllRecipesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllRecipesTableViewController.h; sourceTree = "<group>"; };
@@ -160,6 +160,8 @@
 		CE1934971B6A673D002F4FCB /* RecipesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesWindowController.m; sourceTree = "<group>"; };
 		CE1934991B6A6BCA002F4FCB /* RecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewController.h; sourceTree = "<group>"; };
 		CE19349A1B6A6BCA002F4FCB /* RecipeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewController.m; sourceTree = "<group>"; };
+		CEE134B41B6B7DF700FD7E10 /* CookBookAppData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CookBookAppData.sqlite; sourceTree = "<group>"; };
+		CEE134B61B6B7EEE00FD7E10 /* defaultCellImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultCellImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		CE19337F1B6A37EF002F4FCB = {
 			isa = PBXGroup;
 			children = (
+				CEE134B41B6B7DF700FD7E10 /* CookBookAppData.sqlite */,
 				CE19338A1B6A37EF002F4FCB /* CookBookApp */,
 				CE1933A71B6A37EF002F4FCB /* CookBookAppTests */,
 				CE1934711B6A58EA002F4FCB /* CookBookAppBuilder */,
@@ -269,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1933CB1B6A389D002F4FCB /* Notebook-Recipe-icon.png */,
+				CEE134B61B6B7EEE00FD7E10 /* defaultCellImage.png */,
 				CE1933CD1B6A389D002F4FCB /* Plus.png */,
 				CE1933D71B6A389D002F4FCB /* skin.jpg */,
 				CE1933C31B6A389D002F4FCB /* defaultImage.jpg */,
@@ -317,7 +321,6 @@
 				CE1934351B6A5353002F4FCB /* RecipeCategory.m */,
 				CE1933BE1B6A389D002F4FCB /* Categories.json */,
 				CE1933CE1B6A389D002F4FCB /* Recipes.json */,
-				CE1933B41B6A3818002F4FCB /* CookBookData.sqlite */,
 			);
 			name = CoreDataFiles;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE134B51B6B7DF700FD7E10 /* CookBookAppData.sqlite in Resources */,
 				CE1934281B6A4078002F4FCB /* Bookmark-25.png in Resources */,
 				CE19340E1B6A3F26002F4FCB /* Desserts.png in Resources */,
 				CE1934201B6A4078002F4FCB /* edit.png in Resources */,
@@ -554,11 +558,11 @@
 				CE1933F61B6A38D0002F4FCB /* LaunchScreen.xib in Resources */,
 				CE1934211B6A4078002F4FCB /* trash.png in Resources */,
 				CE1934111B6A3F26002F4FCB /* Other.png in Resources */,
-				CE1933B51B6A3818002F4FCB /* CookBookData.sqlite in Resources */,
 				CE1934251B6A4078002F4FCB /* fav-add.png in Resources */,
 				CE1934231B6A4078002F4FCB /* cancel.png in Resources */,
 				CE1933F21B6A389D002F4FCB /* TableCell.xib in Resources */,
 				CE1934131B6A3F26002F4FCB /* Main course.png in Resources */,
+				CEE134B71B6B7EEE00FD7E10 /* defaultCellImage.png in Resources */,
 				CE19341F1B6A4078002F4FCB /* about.png in Resources */,
 				CE1934221B6A4078002F4FCB /* ok.png in Resources */,
 				CE19339C1B6A37EF002F4FCB /* Images.xcassets in Resources */,

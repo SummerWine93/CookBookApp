@@ -161,9 +161,13 @@
     cell.recipeName.text = cellRecipe.name;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *name = [NSString stringWithFormat:@"t_%@", cellRecipe.image];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:name];
+    //NSString *name = [NSString stringWithFormat:@"t_%@", cellRecipe.image];
+    //NSString *path = [documentsDirectory stringByAppendingPathComponent:name];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:cellRecipe.image];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
+    if (image == nil) {
+        image = [UIImage imageNamed:@"defaultCellImage.png"];
+    }
     [cell.recipeImage setImage:image];
     cell.recipeDetails.text = cellRecipe.ingredients;
     UIImage *favourite;

@@ -210,7 +210,7 @@
         
         //Creating 
         [ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:NO];
-        [ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:YES];
+        //[ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:YES];
     }
 }
 

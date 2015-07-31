@@ -33,7 +33,7 @@
         [loadInfoActivityView startAnimating];
         
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            [self firstInit];
+            //[self firstInit];
         });
         [[NSUserDefaults standardUserDefaults] synchronize];
         [loadInfoActivityView stopAnimating];
@@ -181,86 +181,16 @@
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CookBookApp.sqlite"];
     NSError *error = nil;
     
-    NSString *storePath = [storeURL path];
-    /*
-     NSLog(@"Error %@", error);
-     
-     NSString *dbName = @"CookBookData.sqlite";
-     NSFileManager *fileManager = [NSFileManager defaultManager];
-     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
-     NSString *documentDirectory = [paths objectAtIndex:0];
-     NSString *dbPath = [documentDirectory stringByAppendingString:dbName];
-     
-     BOOL success = [fileManager fileExistsAtPath:dbPath];
-     if (!success) {
-     NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:dbName];
-     success = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error];
-     if (success) {
-     NSLog(@"Success");
-     }
-     else{
-     NSLog(@"Error %@", [error localizedDescription]);
-     }
-     }
-     else {
-     NSLog(@"Already exists");
-     }
-     
-     if (![[NSFileManager defaultManager] copyItemAtPath:dbPath toPath:storePath error:&error]) {
-     NSLog(@"Couldn't preload data, error: %@", error);
-     }*/
-    
-    // NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
-    // NSString *documentsDir = [paths objectAtIndex:0];
-    // NSString *path = [documentsDir stringByAppendingPathComponent:@"CookBookData.sqlite"];
-    
-    /*NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"CookBookData.sqlite"];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSLog(@"From:\n %@", defaultDBPath);
-    NSLog(@"To:\n %@", storePath);
-    if(![fileManager copyItemAtPath:defaultDBPath toPath:storePath error:&error]){
-        NSLog(@"!!!Couldn't copy data: %@ \n \n ", error);
-        NSLog(@"From:\n %@", defaultDBPath);
-        NSLog(@"To:\n %@", storePath);
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"CookBookAppData" ofType:@"sqlite"]];
+        
+        NSError* err = nil;
+        
+        if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err]) {
+            NSLog(@"Oops, could copy preloaded data");
+        }
     }
-    if (![fileManager fileExistsAtPath:defaultDBPath]) {
-        NSLog(@"No preload file");
-    }
-    if (![fileManager fileExistsAtPath:storePath]) {
-        NSLog(@"No store file");
-    }*/
     
-    //NSError *error;
-    /* NSString *dbName = @"CookBookData.sqlite";
-     NSFileManager *fileManager = [NSFileManager defaultManager];
-     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
-     NSString *documentDirectory = [paths objectAtIndex:0];
-     NSString *dbPath = [documentDirectory stringByAppendingString:dbName];
-     NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:dbName];
-     
-     if ([fileManager fileExistsAtPath:defaultDBPath]) { //check if file exists in NSBundle
-     
-     BOOL success = [fileManager fileExistsAtPath:dbPath]; // check if exists in document directory
-     if (!success) {
-     
-     success = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error]; //copy to document directory
-     if (success) {
-     NSLog(@"Database successfully copied to document directory");
-     }
-     else{
-     NSLog(@"Error %@", [error localizedDescription]);
-     }
-     }
-     else {
-     NSLog(@"Already exists in document directory");
-     }
-     
-     }
-     else{
-     NSLog(@"Does not exists in NSBundle");
-     }
-     
-     */
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
         
