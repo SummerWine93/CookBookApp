@@ -44,21 +44,18 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *loadImageView;
 @property (weak, nonatomic) IBOutlet UIView *optionsView;
-@property (weak, nonatomic, readwrite) IBOutlet UIButton *editSaveButton;
 
 @property (weak, nonatomic) IBOutlet UIView *typePickerView;
 @property RecipesTableViewController *correspondingTableViewController;
-@property (weak, nonatomic) IBOutlet UIPickerView *typePicker;
 @property (weak, nonatomic) IBOutlet UITableView *categoryTable;
-
 
 @property (strong) NSString *nameId;
 
 - (IBAction)changeRecipeImage:(id)sender;
 - (void)insertNewObject:(id)sender;
 - (void)insertData: (NSManagedObject *)newManagedObject withContext: (NSManagedObjectContext *)context;
--(void)setTypeOfDishForObject: (NSManagedObject *)newManagedObject;
--(void)setImageForObject: (NSManagedObject *)newManagedObject;
+- (void)setTypeOfDishForObject: (NSManagedObject *)newManagedObject;
+- (void)setImageForObject: (NSManagedObject *)newManagedObject;
 
 @end
 

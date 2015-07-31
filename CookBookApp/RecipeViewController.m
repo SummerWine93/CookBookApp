@@ -12,9 +12,8 @@
 #import "ImageProcessor.h"
 #import <ImageIO/ImageIO.h>
 
-@interface RecipeViewController (){
-    BOOL dataIsUpdated;    
-}
+@interface RecipeViewController ()
+
 @end
 
 @implementation RecipeViewController
@@ -54,7 +53,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    dataIsUpdated = NO;
     for (NSManagedObject *object in [self fetchedResultsController].fetchedObjects) {
         NSLog(@"%@", [object valueForKey:@"name"]);
     }
@@ -62,7 +60,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -78,9 +75,7 @@
     }
 }
 
-#pragma mark -
-#pragma mark changeImage
-
+#pragma mark - Image Setting Stuff
 
 - (IBAction)changeRecipeImage:(id)sender {
     NSLog(@"Changing recipe image...");
@@ -129,15 +124,13 @@
 
 -(void)dataAddedMessCleanUp{
     alert = [[UIAlertView alloc] initWithTitle:@"Info" message:@"Recipe added" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    self.recipeImage.image = [UIImage imageNamed:@"file_add.png"];
+    [alert show];    
     self.recipeName.text = nil;
     self.recipeIngredients.text = nil;
     self.recipeSteps.text = nil;
 }
 
-#pragma mark -
-#pragma mark pickerView
+#pragma mark - pickerView
 
 - (IBAction)chooseTypeOfDish:(id)sender {
     NSLog(@"Changing type of dish...");
@@ -147,16 +140,11 @@
 #pragma mark - Insert Core Data Object
 
 - (void)insertNewObject:(id)sender {
-    UIActivityIndicatorView *activityIndicator = [self loadInfoActivityView];
-    [activityIndicator startAnimating];
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     [self insertData:newManagedObject withContext:context];
-    
     [self.fetchedResultsController performFetch:nil];
-    [activityIndicator stopAnimating];
-
 }
 
 -(void)insertData: (NSManagedObject *)newManagedObject withContext: (NSManagedObjectContext *)context{
@@ -172,7 +160,11 @@
     NSError *error = nil;
     if (![context save:&error]) {
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        alert = [[UIAlertView alloc] initWithTitle:@"Recipe error" message:@"Couldn't save your data" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        alert = [[UIAlertView alloc] initWithTitle:@"Recipe error"
+                                          message:@"Couldn't save your data"
+                                          delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles: nil];
         [alert show];
         // to make context see the changes
         [context refreshObject:newManagedObject mergeChanges:NO];        
@@ -208,9 +200,8 @@
         NSString *name = [NSString stringWithFormat:@"img_%lu.png", (unsigned long)randomValueForName];
         [newManagedObject setValue:name forKey:@"image"];
         
-        //Creating 
+        //Creating the image to be used later
         [ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:NO];
-        //[ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:YES];
     }
 }
 
@@ -303,22 +294,11 @@
     typeOfDishChanged = YES;
 }
 
--(UIActivityIndicatorView *)loadInfoActivityView{
-    UIActivityIndicatorView *loadInfoActivityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    loadInfoActivityView.frame = CGRectMake(0, 0, 40, 40);
-    loadInfoActivityView.center = self.view.center;
-    [self.view addSubview:loadInfoActivityView];
-    [loadInfoActivityView bringSubviewToFront:self.view];
-    
-    return loadInfoActivityView;
-}
-
 -(void)dealloc{
     self.fetchedResultsController = nil;
     [self.managedObjectContext reset];
     self.managedObjectContext = nil;
     self.categoryFetchedResultsController = nil;
-    
 }
 
 -(UIToolbar *)toolBar{

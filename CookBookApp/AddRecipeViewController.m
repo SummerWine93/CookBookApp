@@ -23,16 +23,7 @@
         if ([category.name isEqualToString: self.categoryName]) {
             [self.typeOfDish setTitle:category.name forState:UIControlStateNormal];
         }
-        //[self.recipeIngredients layoutIfNeeded];
-        //self.recipeIngredients.layoutManager.allowsNonContiguousLayout = false;
-        //[self.recipeIngredients sizeToFit];
     }
-    
-    //CGSize newSize = CGSizeMake(self.recipeIngredients.frame.size.width, self.view.frame.size.height * 0.15);
-    //self.recipeIngredients.frame.size = newSize;
-    //self.recipeIngredientsHeight.constant = newSize.height;
-    //self.recipeStepsHeight.constant = newSize.height;
-    
     [super viewDidLoad];    
 }
 
@@ -44,8 +35,7 @@
     [super insertNewObject:sender];
 }
 
-- (IBAction)chooseTypeOfDish:(id)sender {
-    //self.typePickerView.hidden = !self.typePickerView.isHidden;
+- (IBAction)chooseTypeOfDish:(id)sender {    
     self.typePickerView.hidden = YES;
 }
 

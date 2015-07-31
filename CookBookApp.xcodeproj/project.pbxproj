@@ -355,10 +355,10 @@
 			children = (
 				CE1933B71B6A389D002F4FCB /* AddRecipeViewController.h */,
 				CE1933B81B6A389D002F4FCB /* AddRecipeViewController.m */,
-				CE1933D11B6A389D002F4FCB /* RecipeViewController.h */,
-				CE1933D21B6A389D002F4FCB /* RecipeViewController.m */,
 				CE1933D31B6A389D002F4FCB /* ShowRecipeViewController.h */,
 				CE1933D41B6A389D002F4FCB /* ShowRecipeViewController.m */,
+				CE1933D11B6A389D002F4FCB /* RecipeViewController.h */,
+				CE1933D21B6A389D002F4FCB /* RecipeViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
