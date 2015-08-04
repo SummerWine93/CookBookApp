@@ -33,7 +33,7 @@
     UINib *cellNib = [UINib nibWithNibName:@"TableCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:@"TableCell"];
     
-    //[[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
+    [NSFetchedResultsController deleteCacheWithName:nil];    
     [self fillView];
 }
 
@@ -161,12 +161,13 @@
     cell.recipeName.text = cellRecipe.name;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    //NSString *name = [NSString stringWithFormat:@"t_%@", cellRecipe.image];
-    //NSString *path = [documentsDirectory stringByAppendingPathComponent:name];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:cellRecipe.image];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     if (image == nil) {
-        image = [UIImage imageNamed:@"defaultCellImage.png"];
+        image = [UIImage imageNamed:cellRecipe.image];
+        if (image == nil) {
+            image = [UIImage imageNamed:@"defaultImage.jpg"];
+        }
     }
     [cell.recipeImage setImage:image];
     cell.recipeDetails.text = cellRecipe.ingredients;
@@ -174,8 +175,7 @@
     if ([cellRecipe.isFavourite boolValue] == YES) {
         favourite = [UIImage imageNamed:@"like.png"];
     }
-    [cell.recipeIsFavouriteButton setImage:favourite forState:UIControlStateNormal];
-    
+    [cell.recipeIsFavouriteButton setImage:favourite forState:UIControlStateNormal];    
     
     favourite = nil;
     image = nil;

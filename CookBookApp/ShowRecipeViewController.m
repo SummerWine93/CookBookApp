@@ -36,17 +36,13 @@ const int deleteAlertTag = 999;
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self reloadInputViews];
-    //[self viewDidLoad];
     
 }
-
-
 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"Touches began");
     [self.view endEditing:YES];
-    //[self.view resignFirstResponder];
     [super touchesBegan:touches withEvent:event];
 }
 
@@ -75,7 +71,7 @@ const int deleteAlertTag = 999;
         object.isFavourite = @0;
     }
     else{
-        object.isFavourite = @1;
+        object.isFavourite = @1;        
     }
     [self useFavouriteViewSettings];
     NSLog(@"Favourite: %@", object.isFavourite);
@@ -118,7 +114,6 @@ const int deleteAlertTag = 999;
     else{
         [super alertView:alertView clickedButtonAtIndex:buttonIndex];
     }
-    
 }
 
 - (IBAction)saveChanges:(id)sender {
@@ -144,10 +139,6 @@ const int deleteAlertTag = 999;
 #pragma mark - Core Data fill in the info
 
 -(void)fillThePageWithData{    
-    NSString *text = object.ingredients;
-    //[self.recipeIngredients setText:text];
-    //[self.recipeIngredients sizeToFit];
-    
     context = [self.fetchedResultsController managedObjectContext];
     object = [context existingObjectWithID:self.objectId error:nil];
     
@@ -155,7 +146,7 @@ const int deleteAlertTag = 999;
     self.recipeIngredients.text = object.ingredients;
         self.recipeSteps.text = object.steps;
     [self.typeOfDish setTitle:object.category.name forState:UIControlStateNormal];
-    
+    // Loading the image
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:object.image];
@@ -163,34 +154,54 @@ const int deleteAlertTag = 999;
     if (image != nil) {
         self.recipeImage.image = image;
     }
+    // if there is no image the app loads a fefault one for it and sets it as recipeImage
     else{
-        self.recipeImage.image = [UIImage imageNamed:@"defaultImage.jpg"];
+        //NSString *imageName = [[NSString stringWithFormat:@"%@.png", object.name] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        self.recipeImage.image = [UIImage imageNamed:object.image];
+        if (self.recipeImage.image == nil) {
+            self.recipeImage.image = [UIImage imageNamed:@"defaultImage.jpg"];
+        }       
+        
         [self.view setNeedsDisplay];
         [self updateRecipe];
-        
     }
-    
+    // Here the size for the textbox is set dynamically
     CGSize sizeForRecipeSteps = [self.recipeSteps sizeThatFits: self.recipeSteps.textContainer.size];
     self.recipeStepsHeight.constant = sizeForRecipeSteps.height;
     [self.recipeSteps.layoutManager ensureLayoutForTextContainer:self.recipeSteps.textContainer];
-    
     CGSize sizeForRecipeIngredients = [self.recipeIngredients sizeThatFits:self.recipeIngredients.textContainer.size];
     self.recipeIngredientsHeight.constant = sizeForRecipeIngredients.height;
     [self.recipeIngredients.layoutManager ensureLayoutForTextContainer:self.recipeIngredients.textContainer];
 }
 
 -(void)updateRecipe{
+        
     object.name = self.recipeName.text;
     object.ingredients = self.recipeIngredients.text;
     object.steps = self.recipeSteps.text;
     if (typeOfDishChanged) {
-         NSLog(@"Type of dish changed");
         [self setTypeOfDishForObject: object];
     }
-    [self setImageForObject:object];
-    [self.fetchedResultsController performFetch:nil];
+    [self setImageForObject:object];    
 }
 
+
+-(IBAction)imageTapped:(id)sender{
+    if (self.optionsMenuView.isHidden) {
+        [self changeRecipeImage:object];
+    }
+    else{
+        alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:@"Image" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *path = [documentsDirectory stringByAppendingPathComponent:object.image];
+        UIImage *image = [UIImage imageWithContentsOfFile:path];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, self.view.frame.size.width, 300)];
+        [imageView setImage:image];
+        [alert addSubview:imageView];
+        [alert show];
+    }
+}
 
 
 @end

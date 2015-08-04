@@ -22,5 +22,6 @@
 @property (nonatomic, retain) NSString * steps;
 @property (nonatomic, retain) NSDate * timeOfCreation;
 @property (nonatomic, retain) RecipeCategory *category;
+@property (nonatomic, retain) NSString *recipeId;
 
 @end

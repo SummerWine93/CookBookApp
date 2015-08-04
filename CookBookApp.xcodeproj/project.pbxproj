@@ -29,7 +29,6 @@
 		CE1933F01B6A389D002F4FCB /* SimpleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1933D61B6A389D002F4FCB /* SimpleTableViewCell.m */; };
 		CE1933F11B6A389D002F4FCB /* skin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE1933D71B6A389D002F4FCB /* skin.jpg */; };
 		CE1933F21B6A389D002F4FCB /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1933D81B6A389D002F4FCB /* TableCell.xib */; };
-		CE1933F31B6A389D002F4FCB /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1933D91B6A389D002F4FCB /* trash.png */; };
 		CE1933F61B6A38D0002F4FCB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1933F41B6A38D0002F4FCB /* LaunchScreen.xib */; };
 		CE1933F71B6A38D0002F4FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1933F51B6A38D0002F4FCB /* Main.storyboard */; };
 		CE1934051B6A3C88002F4FCB /* CookBookApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1934031B6A3C88002F4FCB /* CookBookApp.xcdatamodeld */; };
@@ -51,17 +50,27 @@
 		CE1934281B6A4078002F4FCB /* Bookmark-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CE19341E1B6A4078002F4FCB /* Bookmark-25.png */; };
 		CE1934361B6A5353002F4FCB /* RecipeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934351B6A5353002F4FCB /* RecipeCategory.m */; };
 		CE1934391B6A5354002F4FCB /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934381B6A5354002F4FCB /* Recipe.m */; };
-		CE1934761B6A58EA002F4FCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934751B6A58EA002F4FCB /* AppDelegate.m */; };
-		CE1934781B6A58EA002F4FCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934771B6A58EA002F4FCB /* main.m */; };
-		CE19347B1B6A58EA002F4FCB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19347A1B6A58EA002F4FCB /* ViewController.m */; };
-		CE1934801B6A58EA002F4FCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE19347F1B6A58EA002F4FCB /* Images.xcassets */; };
-		CE1934831B6A58EA002F4FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1934811B6A58EA002F4FCB /* Main.storyboard */; };
-		CE19348F1B6A58EA002F4FCB /* CookBookAppBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19348E1B6A58EA002F4FCB /* CookBookAppBuilderTests.m */; };
-		CE1934981B6A673D002F4FCB /* RecipesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1934971B6A673D002F4FCB /* RecipesWindowController.m */; };
-		CE19349B1B6A6BCA002F4FCB /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19349A1B6A6BCA002F4FCB /* RecipeTableViewController.m */; };
-		CEE1349C1B6A751C00FD7E10 /* CookBookApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1934031B6A3C88002F4FCB /* CookBookApp.xcdatamodeld */; };
-		CEE134B51B6B7DF700FD7E10 /* CookBookAppData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEE134B41B6B7DF700FD7E10 /* CookBookAppData.sqlite */; };
+		CE510B0C1B70D29F00F4E95D /* img_1D3CE5A8-F6ED-4F33-8B60-476B56E389A1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510AFC1B70D29F00F4E95D /* img_1D3CE5A8-F6ED-4F33-8B60-476B56E389A1.png */; };
+		CE510B0D1B70D29F00F4E95D /* img_2FDB0A89-F3E9-49EE-8C65-B58578E32133.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510AFD1B70D29F00F4E95D /* img_2FDB0A89-F3E9-49EE-8C65-B58578E32133.png */; };
+		CE510B0E1B70D29F00F4E95D /* img_003C192E-039C-4836-B430-FAC1F200A63F.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510AFE1B70D29F00F4E95D /* img_003C192E-039C-4836-B430-FAC1F200A63F.png */; };
+		CE510B0F1B70D29F00F4E95D /* img_5D93D2CC-4FCD-4997-9380-5726452D7221.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510AFF1B70D29F00F4E95D /* img_5D93D2CC-4FCD-4997-9380-5726452D7221.png */; };
+		CE510B101B70D29F00F4E95D /* img_7D367EFC-E7AA-4135-890A-DCBF0DEC417A.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B001B70D29F00F4E95D /* img_7D367EFC-E7AA-4135-890A-DCBF0DEC417A.png */; };
+		CE510B111B70D29F00F4E95D /* img_8D9D1BFB-6391-464F-A839-479D8FC9F109.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B011B70D29F00F4E95D /* img_8D9D1BFB-6391-464F-A839-479D8FC9F109.png */; };
+		CE510B121B70D29F00F4E95D /* img_31A7812C-B874-4858-B21F-F1BE1123B941.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B021B70D29F00F4E95D /* img_31A7812C-B874-4858-B21F-F1BE1123B941.png */; };
+		CE510B131B70D29F00F4E95D /* img_60BCB692-DBDC-41B2-A851-A1377EEEEB8F.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B031B70D29F00F4E95D /* img_60BCB692-DBDC-41B2-A851-A1377EEEEB8F.png */; };
+		CE510B141B70D29F00F4E95D /* img_62EB41D8-3947-4728-AD6A-89375C0AFC9D.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B041B70D29F00F4E95D /* img_62EB41D8-3947-4728-AD6A-89375C0AFC9D.png */; };
+		CE510B151B70D29F00F4E95D /* img_677AE7B3-C9A0-4A5B-B3D0-5A0F720BD029.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B051B70D29F00F4E95D /* img_677AE7B3-C9A0-4A5B-B3D0-5A0F720BD029.png */; };
+		CE510B161B70D29F00F4E95D /* img_996CA17B-157D-422B-BA9F-E09DE3E87639.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B061B70D29F00F4E95D /* img_996CA17B-157D-422B-BA9F-E09DE3E87639.png */; };
+		CE510B171B70D29F00F4E95D /* img_88431824-D3B5-4EEA-9173-2333BEA8DE25.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B071B70D29F00F4E95D /* img_88431824-D3B5-4EEA-9173-2333BEA8DE25.png */; };
+		CE510B181B70D29F00F4E95D /* img_A8F3319C-0445-41BD-A4EF-CE7211F1C253.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B081B70D29F00F4E95D /* img_A8F3319C-0445-41BD-A4EF-CE7211F1C253.png */; };
+		CE510B191B70D29F00F4E95D /* img_A58C31C6-59B7-40AD-A0A7-7F3CDA039EAE.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B091B70D29F00F4E95D /* img_A58C31C6-59B7-40AD-A0A7-7F3CDA039EAE.png */; };
+		CE510B1A1B70D29F00F4E95D /* img_A97B104F-DAF3-4976-9371-7856651C4B70.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B0A1B70D29F00F4E95D /* img_A97B104F-DAF3-4976-9371-7856651C4B70.png */; };
+		CE510B1B1B70D29F00F4E95D /* img_CB31219E-8189-456D-8938-3FCB7F6804D2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B0B1B70D29F00F4E95D /* img_CB31219E-8189-456D-8938-3FCB7F6804D2.png */; };
+		CE510B1D1B70D2DD00F4E95D /* CookBookAppData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CE510B1C1B70D2DD00F4E95D /* CookBookAppData.sqlite */; };
+		CE510B201B70DD4600F4E95D /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE510B1F1B70DD4600F4E95D /* LaunchScreenViewController.m */; };
 		CEE134B71B6B7EEE00FD7E10 /* defaultCellImage.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE134B61B6B7EEE00FD7E10 /* defaultCellImage.png */; };
+		CEE134BD1B6BBC9300FD7E10 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE134BC1B6BBC9300FD7E10 /* AboutTableViewController.m */; };
+		CEE134BF1B6F5AF700FD7E10 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE134BE1B6F5AF700FD7E10 /* trash.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,13 +80,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = CE1933871B6A37EF002F4FCB;
 			remoteInfo = CookBookApp;
-		};
-		CE1934891B6A58EA002F4FCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE1933801B6A37EF002F4FCB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE19346F1B6A58EA002F4FCB;
-			remoteInfo = CookBookAppBuilder;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -120,7 +122,6 @@
 		CE1933D61B6A389D002F4FCB /* SimpleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableViewCell.m; sourceTree = "<group>"; };
 		CE1933D71B6A389D002F4FCB /* skin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skin.jpg; sourceTree = "<group>"; };
 		CE1933D81B6A389D002F4FCB /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
-		CE1933D91B6A389D002F4FCB /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
 		CE1933F41B6A38D0002F4FCB /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
 		CE1933F51B6A38D0002F4FCB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		CE1934041B6A3C88002F4FCB /* CookBookApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CookBookApp.xcdatamodel; sourceTree = "<group>"; };
@@ -144,24 +145,31 @@
 		CE1934351B6A5353002F4FCB /* RecipeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCategory.m; sourceTree = "<group>"; };
 		CE1934371B6A5354002F4FCB /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
 		CE1934381B6A5354002F4FCB /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
-		CE1934701B6A58EA002F4FCB /* CookBookAppBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookBookAppBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE1934731B6A58EA002F4FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE1934741B6A58EA002F4FCB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CE1934751B6A58EA002F4FCB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CE1934771B6A58EA002F4FCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CE1934791B6A58EA002F4FCB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CE19347A1B6A58EA002F4FCB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CE19347F1B6A58EA002F4FCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CE1934821B6A58EA002F4FCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CE1934881B6A58EA002F4FCB /* CookBookAppBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookBookAppBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE19348D1B6A58EA002F4FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE19348E1B6A58EA002F4FCB /* CookBookAppBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookBookAppBuilderTests.m; sourceTree = "<group>"; };
-		CE1934961B6A673D002F4FCB /* RecipesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesWindowController.h; sourceTree = "<group>"; };
-		CE1934971B6A673D002F4FCB /* RecipesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesWindowController.m; sourceTree = "<group>"; };
-		CE1934991B6A6BCA002F4FCB /* RecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewController.h; sourceTree = "<group>"; };
-		CE19349A1B6A6BCA002F4FCB /* RecipeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewController.m; sourceTree = "<group>"; };
-		CEE134B41B6B7DF700FD7E10 /* CookBookAppData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CookBookAppData.sqlite; sourceTree = "<group>"; };
+		CE510ADA1B70B2FD00F4E95D /* CookBookApp 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CookBookApp 2.xcdatamodel"; sourceTree = "<group>"; };
+		CE510ADB1B70BE6D00F4E95D /* CookBookApp 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CookBookApp 3.xcdatamodel"; sourceTree = "<group>"; };
+		CE510AFC1B70D29F00F4E95D /* img_1D3CE5A8-F6ED-4F33-8B60-476B56E389A1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_1D3CE5A8-F6ED-4F33-8B60-476B56E389A1.png"; sourceTree = "<group>"; };
+		CE510AFD1B70D29F00F4E95D /* img_2FDB0A89-F3E9-49EE-8C65-B58578E32133.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_2FDB0A89-F3E9-49EE-8C65-B58578E32133.png"; sourceTree = "<group>"; };
+		CE510AFE1B70D29F00F4E95D /* img_003C192E-039C-4836-B430-FAC1F200A63F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_003C192E-039C-4836-B430-FAC1F200A63F.png"; sourceTree = "<group>"; };
+		CE510AFF1B70D29F00F4E95D /* img_5D93D2CC-4FCD-4997-9380-5726452D7221.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_5D93D2CC-4FCD-4997-9380-5726452D7221.png"; sourceTree = "<group>"; };
+		CE510B001B70D29F00F4E95D /* img_7D367EFC-E7AA-4135-890A-DCBF0DEC417A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_7D367EFC-E7AA-4135-890A-DCBF0DEC417A.png"; sourceTree = "<group>"; };
+		CE510B011B70D29F00F4E95D /* img_8D9D1BFB-6391-464F-A839-479D8FC9F109.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_8D9D1BFB-6391-464F-A839-479D8FC9F109.png"; sourceTree = "<group>"; };
+		CE510B021B70D29F00F4E95D /* img_31A7812C-B874-4858-B21F-F1BE1123B941.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_31A7812C-B874-4858-B21F-F1BE1123B941.png"; sourceTree = "<group>"; };
+		CE510B031B70D29F00F4E95D /* img_60BCB692-DBDC-41B2-A851-A1377EEEEB8F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_60BCB692-DBDC-41B2-A851-A1377EEEEB8F.png"; sourceTree = "<group>"; };
+		CE510B041B70D29F00F4E95D /* img_62EB41D8-3947-4728-AD6A-89375C0AFC9D.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_62EB41D8-3947-4728-AD6A-89375C0AFC9D.png"; sourceTree = "<group>"; };
+		CE510B051B70D29F00F4E95D /* img_677AE7B3-C9A0-4A5B-B3D0-5A0F720BD029.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_677AE7B3-C9A0-4A5B-B3D0-5A0F720BD029.png"; sourceTree = "<group>"; };
+		CE510B061B70D29F00F4E95D /* img_996CA17B-157D-422B-BA9F-E09DE3E87639.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_996CA17B-157D-422B-BA9F-E09DE3E87639.png"; sourceTree = "<group>"; };
+		CE510B071B70D29F00F4E95D /* img_88431824-D3B5-4EEA-9173-2333BEA8DE25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_88431824-D3B5-4EEA-9173-2333BEA8DE25.png"; sourceTree = "<group>"; };
+		CE510B081B70D29F00F4E95D /* img_A8F3319C-0445-41BD-A4EF-CE7211F1C253.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_A8F3319C-0445-41BD-A4EF-CE7211F1C253.png"; sourceTree = "<group>"; };
+		CE510B091B70D29F00F4E95D /* img_A58C31C6-59B7-40AD-A0A7-7F3CDA039EAE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_A58C31C6-59B7-40AD-A0A7-7F3CDA039EAE.png"; sourceTree = "<group>"; };
+		CE510B0A1B70D29F00F4E95D /* img_A97B104F-DAF3-4976-9371-7856651C4B70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_A97B104F-DAF3-4976-9371-7856651C4B70.png"; sourceTree = "<group>"; };
+		CE510B0B1B70D29F00F4E95D /* img_CB31219E-8189-456D-8938-3FCB7F6804D2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_CB31219E-8189-456D-8938-3FCB7F6804D2.png"; sourceTree = "<group>"; };
+		CE510B1C1B70D2DD00F4E95D /* CookBookAppData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CookBookAppData.sqlite; sourceTree = "<group>"; };
+		CE510B1E1B70DD4600F4E95D /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
+		CE510B1F1B70DD4600F4E95D /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
 		CEE134B61B6B7EEE00FD7E10 /* defaultCellImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultCellImage.png; sourceTree = "<group>"; };
+		CEE134BB1B6BBC9300FD7E10 /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
+		CEE134BC1B6BBC9300FD7E10 /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
+		CEE134BE1B6F5AF700FD7E10 /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,31 +187,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE19346D1B6A58EA002F4FCB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE1934851B6A58EA002F4FCB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		CE19337F1B6A37EF002F4FCB = {
 			isa = PBXGroup;
 			children = (
-				CEE134B41B6B7DF700FD7E10 /* CookBookAppData.sqlite */,
+				CE510B1C1B70D2DD00F4E95D /* CookBookAppData.sqlite */,
 				CE19338A1B6A37EF002F4FCB /* CookBookApp */,
 				CE1933A71B6A37EF002F4FCB /* CookBookAppTests */,
-				CE1934711B6A58EA002F4FCB /* CookBookAppBuilder */,
-				CE19348B1B6A58EA002F4FCB /* CookBookAppBuilderTests */,
 				CE1933891B6A37EF002F4FCB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -213,8 +205,6 @@
 			children = (
 				CE1933881B6A37EF002F4FCB /* CookBookApp.app */,
 				CE1933A41B6A37EF002F4FCB /* CookBookAppTests.xctest */,
-				CE1934701B6A58EA002F4FCB /* CookBookAppBuilder.app */,
-				CE1934881B6A58EA002F4FCB /* CookBookAppBuilderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,7 +216,6 @@
 				CE1934291B6A40C4002F4FCB /* CoreDataFiles */,
 				CE1933C81B6A389D002F4FCB /* ImageProcessor.h */,
 				CE1933C91B6A389D002F4FCB /* ImageProcessor.m */,
-				CE1933D91B6A389D002F4FCB /* trash.png */,
 				CE19338F1B6A37EF002F4FCB /* AppDelegate.h */,
 				CE1933901B6A37EF002F4FCB /* AppDelegate.m */,
 				CE1933951B6A37EF002F4FCB /* ViewController.h */,
@@ -271,6 +260,8 @@
 		CE1934061B6A3EB3002F4FCB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CEE134C01B6F723400FD7E10 /* Default */,
+				CEE134BE1B6F5AF700FD7E10 /* trash.png */,
 				CE1933CB1B6A389D002F4FCB /* Notebook-Recipe-icon.png */,
 				CEE134B61B6B7EEE00FD7E10 /* defaultCellImage.png */,
 				CE1933CD1B6A389D002F4FCB /* Plus.png */,
@@ -346,6 +337,8 @@
 				CE1933C71B6A389D002F4FCB /* FavouriteRecipesTableViewController.m */,
 				CE1933CF1B6A389D002F4FCB /* RecipesTableViewController.h */,
 				CE1933D01B6A389D002F4FCB /* RecipesTableViewController.m */,
+				CEE134BB1B6BBC9300FD7E10 /* AboutTableViewController.h */,
+				CEE134BC1B6BBC9300FD7E10 /* AboutTableViewController.m */,
 			);
 			name = TableViewControllers;
 			sourceTree = "<group>";
@@ -359,6 +352,8 @@
 				CE1933D41B6A389D002F4FCB /* ShowRecipeViewController.m */,
 				CE1933D11B6A389D002F4FCB /* RecipeViewController.h */,
 				CE1933D21B6A389D002F4FCB /* RecipeViewController.m */,
+				CE510B1E1B70DD4600F4E95D /* LaunchScreenViewController.h */,
+				CE510B1F1B70DD4600F4E95D /* LaunchScreenViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -374,48 +369,27 @@
 			name = TableCells;
 			sourceTree = "<group>";
 		};
-		CE1934711B6A58EA002F4FCB /* CookBookAppBuilder */ = {
+		CEE134C01B6F723400FD7E10 /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				CE1934741B6A58EA002F4FCB /* AppDelegate.h */,
-				CE1934751B6A58EA002F4FCB /* AppDelegate.m */,
-				CE1934791B6A58EA002F4FCB /* ViewController.h */,
-				CE19347A1B6A58EA002F4FCB /* ViewController.m */,
-				CE19347F1B6A58EA002F4FCB /* Images.xcassets */,
-				CE1934811B6A58EA002F4FCB /* Main.storyboard */,
-				CE1934721B6A58EA002F4FCB /* Supporting Files */,
-				CE1934961B6A673D002F4FCB /* RecipesWindowController.h */,
-				CE1934971B6A673D002F4FCB /* RecipesWindowController.m */,
-				CE1934991B6A6BCA002F4FCB /* RecipeTableViewController.h */,
-				CE19349A1B6A6BCA002F4FCB /* RecipeTableViewController.m */,
+				CE510AFC1B70D29F00F4E95D /* img_1D3CE5A8-F6ED-4F33-8B60-476B56E389A1.png */,
+				CE510AFD1B70D29F00F4E95D /* img_2FDB0A89-F3E9-49EE-8C65-B58578E32133.png */,
+				CE510AFE1B70D29F00F4E95D /* img_003C192E-039C-4836-B430-FAC1F200A63F.png */,
+				CE510AFF1B70D29F00F4E95D /* img_5D93D2CC-4FCD-4997-9380-5726452D7221.png */,
+				CE510B001B70D29F00F4E95D /* img_7D367EFC-E7AA-4135-890A-DCBF0DEC417A.png */,
+				CE510B011B70D29F00F4E95D /* img_8D9D1BFB-6391-464F-A839-479D8FC9F109.png */,
+				CE510B021B70D29F00F4E95D /* img_31A7812C-B874-4858-B21F-F1BE1123B941.png */,
+				CE510B031B70D29F00F4E95D /* img_60BCB692-DBDC-41B2-A851-A1377EEEEB8F.png */,
+				CE510B041B70D29F00F4E95D /* img_62EB41D8-3947-4728-AD6A-89375C0AFC9D.png */,
+				CE510B051B70D29F00F4E95D /* img_677AE7B3-C9A0-4A5B-B3D0-5A0F720BD029.png */,
+				CE510B061B70D29F00F4E95D /* img_996CA17B-157D-422B-BA9F-E09DE3E87639.png */,
+				CE510B071B70D29F00F4E95D /* img_88431824-D3B5-4EEA-9173-2333BEA8DE25.png */,
+				CE510B081B70D29F00F4E95D /* img_A8F3319C-0445-41BD-A4EF-CE7211F1C253.png */,
+				CE510B091B70D29F00F4E95D /* img_A58C31C6-59B7-40AD-A0A7-7F3CDA039EAE.png */,
+				CE510B0A1B70D29F00F4E95D /* img_A97B104F-DAF3-4976-9371-7856651C4B70.png */,
+				CE510B0B1B70D29F00F4E95D /* img_CB31219E-8189-456D-8938-3FCB7F6804D2.png */,
 			);
-			path = CookBookAppBuilder;
-			sourceTree = "<group>";
-		};
-		CE1934721B6A58EA002F4FCB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CE1934731B6A58EA002F4FCB /* Info.plist */,
-				CE1934771B6A58EA002F4FCB /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CE19348B1B6A58EA002F4FCB /* CookBookAppBuilderTests */ = {
-			isa = PBXGroup;
-			children = (
-				CE19348E1B6A58EA002F4FCB /* CookBookAppBuilderTests.m */,
-				CE19348C1B6A58EA002F4FCB /* Supporting Files */,
-			);
-			path = CookBookAppBuilderTests;
-			sourceTree = "<group>";
-		};
-		CE19348C1B6A58EA002F4FCB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CE19348D1B6A58EA002F4FCB /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = Default;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,41 +430,6 @@
 			productReference = CE1933A41B6A37EF002F4FCB /* CookBookAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CE19346F1B6A58EA002F4FCB /* CookBookAppBuilder */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE1934901B6A58EA002F4FCB /* Build configuration list for PBXNativeTarget "CookBookAppBuilder" */;
-			buildPhases = (
-				CE19346C1B6A58EA002F4FCB /* Sources */,
-				CE19346D1B6A58EA002F4FCB /* Frameworks */,
-				CE19346E1B6A58EA002F4FCB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CookBookAppBuilder;
-			productName = CookBookAppBuilder;
-			productReference = CE1934701B6A58EA002F4FCB /* CookBookAppBuilder.app */;
-			productType = "com.apple.product-type.application";
-		};
-		CE1934871B6A58EA002F4FCB /* CookBookAppBuilderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE1934931B6A58EA002F4FCB /* Build configuration list for PBXNativeTarget "CookBookAppBuilderTests" */;
-			buildPhases = (
-				CE1934841B6A58EA002F4FCB /* Sources */,
-				CE1934851B6A58EA002F4FCB /* Frameworks */,
-				CE1934861B6A58EA002F4FCB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CE19348A1B6A58EA002F4FCB /* PBXTargetDependency */,
-			);
-			name = CookBookAppBuilderTests;
-			productName = CookBookAppBuilderTests;
-			productReference = CE1934881B6A58EA002F4FCB /* CookBookAppBuilderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -506,13 +445,6 @@
 					CE1933A31B6A37EF002F4FCB = {
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = CE1933871B6A37EF002F4FCB;
-					};
-					CE19346F1B6A58EA002F4FCB = {
-						CreatedOnToolsVersion = 6.4;
-					};
-					CE1934871B6A58EA002F4FCB = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = CE19346F1B6A58EA002F4FCB;
 					};
 				};
 			};
@@ -531,8 +463,6 @@
 			targets = (
 				CE1933871B6A37EF002F4FCB /* CookBookApp */,
 				CE1933A31B6A37EF002F4FCB /* CookBookAppTests */,
-				CE19346F1B6A58EA002F4FCB /* CookBookAppBuilder */,
-				CE1934871B6A58EA002F4FCB /* CookBookAppBuilderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -542,10 +472,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEE134B51B6B7DF700FD7E10 /* CookBookAppData.sqlite in Resources */,
 				CE1934281B6A4078002F4FCB /* Bookmark-25.png in Resources */,
+				CE510B0D1B70D29F00F4E95D /* img_2FDB0A89-F3E9-49EE-8C65-B58578E32133.png in Resources */,
 				CE19340E1B6A3F26002F4FCB /* Desserts.png in Resources */,
 				CE1934201B6A4078002F4FCB /* edit.png in Resources */,
+				CE510B1D1B70D2DD00F4E95D /* CookBookAppData.sqlite in Resources */,
 				CE1933E01B6A389D002F4FCB /* Categories.json in Resources */,
 				CE1933E91B6A389D002F4FCB /* Notebook-Recipe-icon.png in Resources */,
 				CE1933F11B6A389D002F4FCB /* skin.jpg in Resources */,
@@ -553,44 +484,43 @@
 				CE1934121B6A3F26002F4FCB /* Salads.png in Resources */,
 				CE1933EC1B6A389D002F4FCB /* Recipes.json in Resources */,
 				CE1934241B6A4078002F4FCB /* like.png in Resources */,
+				CEE134BF1B6F5AF700FD7E10 /* trash.png in Resources */,
 				CE1933E31B6A389D002F4FCB /* defaultImage.jpg in Resources */,
 				CE1934101B6A3F26002F4FCB /* First course.png in Resources */,
 				CE1933F61B6A38D0002F4FCB /* LaunchScreen.xib in Resources */,
+				CE510B1A1B70D29F00F4E95D /* img_A97B104F-DAF3-4976-9371-7856651C4B70.png in Resources */,
 				CE1934211B6A4078002F4FCB /* trash.png in Resources */,
+				CE510B191B70D29F00F4E95D /* img_A58C31C6-59B7-40AD-A0A7-7F3CDA039EAE.png in Resources */,
+				CE510B111B70D29F00F4E95D /* img_8D9D1BFB-6391-464F-A839-479D8FC9F109.png in Resources */,
 				CE1934111B6A3F26002F4FCB /* Other.png in Resources */,
+				CE510B161B70D29F00F4E95D /* img_996CA17B-157D-422B-BA9F-E09DE3E87639.png in Resources */,
 				CE1934251B6A4078002F4FCB /* fav-add.png in Resources */,
+				CE510B0C1B70D29F00F4E95D /* img_1D3CE5A8-F6ED-4F33-8B60-476B56E389A1.png in Resources */,
+				CE510B1B1B70D29F00F4E95D /* img_CB31219E-8189-456D-8938-3FCB7F6804D2.png in Resources */,
 				CE1934231B6A4078002F4FCB /* cancel.png in Resources */,
 				CE1933F21B6A389D002F4FCB /* TableCell.xib in Resources */,
 				CE1934131B6A3F26002F4FCB /* Main course.png in Resources */,
+				CE510B171B70D29F00F4E95D /* img_88431824-D3B5-4EEA-9173-2333BEA8DE25.png in Resources */,
+				CE510B121B70D29F00F4E95D /* img_31A7812C-B874-4858-B21F-F1BE1123B941.png in Resources */,
+				CE510B0E1B70D29F00F4E95D /* img_003C192E-039C-4836-B430-FAC1F200A63F.png in Resources */,
+				CE510B101B70D29F00F4E95D /* img_7D367EFC-E7AA-4135-890A-DCBF0DEC417A.png in Resources */,
 				CEE134B71B6B7EEE00FD7E10 /* defaultCellImage.png in Resources */,
 				CE19341F1B6A4078002F4FCB /* about.png in Resources */,
 				CE1934221B6A4078002F4FCB /* ok.png in Resources */,
+				CE510B0F1B70D29F00F4E95D /* img_5D93D2CC-4FCD-4997-9380-5726452D7221.png in Resources */,
 				CE19339C1B6A37EF002F4FCB /* Images.xcassets in Resources */,
+				CE510B151B70D29F00F4E95D /* img_677AE7B3-C9A0-4A5B-B3D0-5A0F720BD029.png in Resources */,
 				CE1934271B6A4078002F4FCB /* camera.png in Resources */,
+				CE510B131B70D29F00F4E95D /* img_60BCB692-DBDC-41B2-A851-A1377EEEEB8F.png in Resources */,
 				CE1934261B6A4078002F4FCB /* fav-delete.png in Resources */,
-				CE1933F31B6A389D002F4FCB /* trash.png in Resources */,
+				CE510B181B70D29F00F4E95D /* img_A8F3319C-0445-41BD-A4EF-CE7211F1C253.png in Resources */,
+				CE510B141B70D29F00F4E95D /* img_62EB41D8-3947-4728-AD6A-89375C0AFC9D.png in Resources */,
 				CE19340F1B6A3F26002F4FCB /* Drinks.png in Resources */,
 				CE1933EB1B6A389D002F4FCB /* Plus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CE1933A21B6A37EF002F4FCB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE19346E1B6A58EA002F4FCB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE1934801B6A58EA002F4FCB /* Images.xcassets in Resources */,
-				CE1934831B6A58EA002F4FCB /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE1934861B6A58EA002F4FCB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -605,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1933911B6A37EF002F4FCB /* AppDelegate.m in Sources */,
+				CEE134BD1B6BBC9300FD7E10 /* AboutTableViewController.m in Sources */,
 				CE1933F01B6A389D002F4FCB /* SimpleTableViewCell.m in Sources */,
 				CE1933EF1B6A389D002F4FCB /* ShowRecipeViewController.m in Sources */,
 				CE1933E11B6A389D002F4FCB /* CategoriesTableViewCell.m in Sources */,
@@ -614,6 +545,7 @@
 				CE19338E1B6A37EF002F4FCB /* main.m in Sources */,
 				CE1934361B6A5353002F4FCB /* RecipeCategory.m in Sources */,
 				CE1933E71B6A389D002F4FCB /* ImageProcessor.m in Sources */,
+				CE510B201B70DD4600F4E95D /* LaunchScreenViewController.m in Sources */,
 				CE1933E61B6A389D002F4FCB /* FavouriteRecipesTableViewController.m in Sources */,
 				CE1934391B6A5354002F4FCB /* Recipe.m in Sources */,
 				CE1933EE1B6A389D002F4FCB /* RecipeViewController.m in Sources */,
@@ -631,27 +563,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE19346C1B6A58EA002F4FCB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE19349B1B6A6BCA002F4FCB /* RecipeTableViewController.m in Sources */,
-				CE19347B1B6A58EA002F4FCB /* ViewController.m in Sources */,
-				CE1934781B6A58EA002F4FCB /* main.m in Sources */,
-				CE1934761B6A58EA002F4FCB /* AppDelegate.m in Sources */,
-				CEE1349C1B6A751C00FD7E10 /* CookBookApp.xcdatamodeld in Sources */,
-				CE1934981B6A673D002F4FCB /* RecipesWindowController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE1934841B6A58EA002F4FCB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE19348F1B6A58EA002F4FCB /* CookBookAppBuilderTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -660,23 +571,7 @@
 			target = CE1933871B6A37EF002F4FCB /* CookBookApp */;
 			targetProxy = CE1933A51B6A37EF002F4FCB /* PBXContainerItemProxy */;
 		};
-		CE19348A1B6A58EA002F4FCB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE19346F1B6A58EA002F4FCB /* CookBookAppBuilder */;
-			targetProxy = CE1934891B6A58EA002F4FCB /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CE1934811B6A58EA002F4FCB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE1934821B6A58EA002F4FCB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CE1933AC1B6A37EF002F4FCB /* Debug */ = {
@@ -766,6 +661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CookBookApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -776,6 +672,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CookBookApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -815,80 +712,6 @@
 			};
 			name = Release;
 		};
-		CE1934911B6A58EA002F4FCB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CookBookAppBuilder/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		CE1934921B6A58EA002F4FCB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = CookBookAppBuilder/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		CE1934941B6A58EA002F4FCB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CookBookAppBuilderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CookBookAppBuilder.app/Contents/MacOS/CookBookAppBuilder";
-			};
-			name = Debug;
-		};
-		CE1934951B6A58EA002F4FCB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CookBookAppBuilderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CookBookAppBuilder.app/Contents/MacOS/CookBookAppBuilder";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -919,33 +742,17 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE1934901B6A58EA002F4FCB /* Build configuration list for PBXNativeTarget "CookBookAppBuilder" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE1934911B6A58EA002F4FCB /* Debug */,
-				CE1934921B6A58EA002F4FCB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE1934931B6A58EA002F4FCB /* Build configuration list for PBXNativeTarget "CookBookAppBuilderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE1934941B6A58EA002F4FCB /* Debug */,
-				CE1934951B6A58EA002F4FCB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
 		CE1934031B6A3C88002F4FCB /* CookBookApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				CE510ADB1B70BE6D00F4E95D /* CookBookApp 3.xcdatamodel */,
+				CE510ADA1B70B2FD00F4E95D /* CookBookApp 2.xcdatamodel */,
 				CE1934041B6A3C88002F4FCB /* CookBookApp.xcdatamodel */,
 			);
-			currentVersion = CE1934041B6A3C88002F4FCB /* CookBookApp.xcdatamodel */;
+			currentVersion = CE510ADB1B70BE6D00F4E95D /* CookBookApp 3.xcdatamodel */;
 			path = CookBookApp.xcdatamodeld;
 			sourceTree = SOURCE_ROOT;
 			versionGroupType = wrapper.xcdatamodel;

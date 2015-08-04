@@ -25,6 +25,7 @@
 @property (nonatomic) NSFetchedResultsController *categoryFetchedResultsController;
 @property NSManagedObjectContext *context;
 @property BOOL showFavouriteOnly;
+@property int recipeId;
 
 -(void)saveContext;
 -(NSURL *)applicationsDocumentsDirectory;

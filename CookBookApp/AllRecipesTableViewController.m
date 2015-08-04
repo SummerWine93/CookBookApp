@@ -28,6 +28,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    self.navigationItem.title = self.categoryPredicateData;
+    
     NSPredicate *favouritePredicate = [NSPredicate predicateWithFormat:@"isFavourite != nil"];
     [[self.fetchedResultsController fetchRequest] setPredicate:favouritePredicate];
     NSPredicate *categoryPredicate = [NSPredicate predicateWithFormat:@"category.name == %@", self.categoryPredicateData];
@@ -50,6 +52,12 @@
 -(IBAction)unvindToAllRecipes:(UIStoryboardSegue*)unwindSegue{
     
 }
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{    
+    return nil;
+}
+
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSIndexPath *path = [self.tableView indexPathForSelectedRow];

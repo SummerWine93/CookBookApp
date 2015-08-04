@@ -21,5 +21,6 @@
 @dynamic steps;
 @dynamic timeOfCreation;
 @dynamic category;
+@dynamic recipeId;
 
 @end

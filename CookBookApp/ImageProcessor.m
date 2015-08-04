@@ -11,6 +11,7 @@
 
 @implementation ImageProcessor
 
+
 +(UIImage *) createImageFromImage: (UIImage *)image WithName:(NSString *)name Thumbnail: (BOOL)isThumbnail{
     CGSize oldSize = image.size;
     CGSize newSize;

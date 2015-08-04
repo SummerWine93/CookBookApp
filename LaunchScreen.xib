@@ -2,44 +2,22 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Delphi LCC. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Copyright (c) 2015 Delphi LCC. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
+                    <rect key="frame" x="20" y="527" width="441" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CookBookLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="85w-J7-OPD">
-                    <rect key="frame" x="20" y="50" width="441" height="108"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="110" id="4qQ-r8-MyJ"/>
-                        <constraint firstAttribute="height" constant="108" id="Dfz-zt-lez"/>
-                        <constraint firstAttribute="width" secondItem="85w-J7-OPD" secondAttribute="height" multiplier="40:11" id="L2i-aU-DpK"/>
-                        <constraint firstAttribute="width" constant="441" id="xvm-Ws-cuw"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="4qQ-r8-MyJ"/>
-                            <exclude reference="L2i-aU-DpK"/>
-                        </mask>
-                    </variation>
-                    <variation key="widthClass=compact">
-                        <mask key="constraints">
-                            <include reference="4qQ-r8-MyJ"/>
-                            <exclude reference="L2i-aU-DpK"/>
-                        </mask>
-                    </variation>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Notebook-Recipe-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="S8d-id-0YN">
-                    <rect key="frame" x="110" y="166" width="260" height="265"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Notebook-Recipe-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="S8d-id-0YN">
+                    <rect key="frame" x="30" y="166" width="260" height="265"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="265" id="6g1-YN-POY"/>
                         <constraint firstAttribute="width" constant="260" id="Sa9-pC-YDy"/>
@@ -50,48 +28,87 @@
                             <exclude reference="kEd-HD-4fN"/>
                         </mask>
                     </variation>
-                    <variation key="widthClass=compact">
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="30" y="166" width="260" height="265"/>
                         <mask key="constraints">
-                            <include reference="kEd-HD-4fN"/>
+                            <exclude reference="6g1-YN-POY"/>
+                            <exclude reference="kEd-HD-4fN"/>
                         </mask>
                     </variation>
+                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                        <rect key="frame" x="155" y="133" width="260" height="265"/>
+                    </variation>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cook Book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-4v-DsV">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Cook Book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-4v-DsV">
                     <rect key="frame" x="54" y="50" width="373" height="134"/>
                     <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="67"/>
                     <color key="textColor" red="0.4823529411764706" green="0.070588235294117646" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="0.0" y="50" width="320" height="80"/>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                        <rect key="frame" x="20" y="50" width="696" height="80"/>
+                    </variation>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="S8d-id-0YN" secondAttribute="centerY" constant="-58.5" id="4bG-Sg-v25"/>
-                <constraint firstItem="85w-J7-OPD" firstAttribute="leading" secondItem="8ie-xW-0ye" secondAttribute="leading" id="Dll-XD-5Zq"/>
-                <constraint firstItem="85w-J7-OPD" firstAttribute="trailing" secondItem="8ie-xW-0ye" secondAttribute="trailing" id="EaL-bO-cV1"/>
-                <constraint firstItem="85w-J7-OPD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="HMR-Bd-g5e"/>
-                <constraint firstItem="85w-J7-OPD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="INb-vO-kiO"/>
-                <constraint firstItem="S8d-id-0YN" firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="KaY-5o-qsM"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstItem="S8d-id-0YN" firstAttribute="top" secondItem="85w-J7-OPD" secondAttribute="bottom" constant="8" symbolic="YES" id="OgT-NA-H0V"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstItem="qbO-4v-DsV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="fld-wO-uGA"/>
-                <constraint firstAttribute="centerX" secondItem="qbO-4v-DsV" secondAttribute="centerX" constant="-0.5" id="iiu-uJ-DTA"/>
-                <constraint firstItem="85w-J7-OPD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="vgS-Pn-dU3"/>
+                <constraint firstAttribute="centerX" secondItem="qbO-4v-DsV" secondAttribute="centerX" id="0cT-uR-iMr"/>
+                <constraint firstAttribute="centerY" secondItem="S8d-id-0YN" secondAttribute="centerY" id="96i-X1-AKw"/>
+                <constraint firstItem="qbO-4v-DsV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="Gu4-C9-gHD"/>
+                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="OmL-dH-r3b"/>
+                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="TAw-Gg-y4L"/>
+                <constraint firstAttribute="trailing" secondItem="qbO-4v-DsV" secondAttribute="trailing" constant="20" id="UF5-J2-EEQ"/>
+                <constraint firstAttribute="centerX" secondItem="S8d-id-0YN" secondAttribute="centerX" id="Uh8-hk-owm"/>
+                <constraint firstAttribute="centerY" secondItem="S8d-id-0YN" secondAttribute="centerY" id="Uq4-aH-xW2"/>
+                <constraint firstItem="qbO-4v-DsV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="bPB-Ba-B06"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="cpG-rT-scX"/>
+                <constraint firstAttribute="trailing" secondItem="8ie-xW-0ye" secondAttribute="trailing" constant="20" id="pmL-lo-b9t"/>
+                <constraint firstAttribute="centerY" secondItem="qbO-4v-DsV" secondAttribute="centerY" constant="300" id="r41-ge-f6I"/>
+                <constraint firstItem="qbO-4v-DsV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sz5-e7-Jo0"/>
+                <constraint firstAttribute="centerY" secondItem="8ie-xW-0ye" secondAttribute="centerY" constant="-400" id="vkn-xU-wcE"/>
+                <constraint firstItem="qbO-4v-DsV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="yfI-XM-aXB"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qbO-4v-DsV" secondAttribute="trailing" constant="30" id="yuO-Ur-KqI"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="INb-vO-kiO"/>
-                    <exclude reference="vgS-Pn-dU3"/>
+                    <exclude reference="Gu4-C9-gHD"/>
+                    <exclude reference="UF5-J2-EEQ"/>
+                    <exclude reference="bPB-Ba-B06"/>
+                    <exclude reference="r41-ge-f6I"/>
+                    <exclude reference="sz5-e7-Jo0"/>
+                    <exclude reference="yfI-XM-aXB"/>
+                    <exclude reference="yuO-Ur-KqI"/>
+                    <exclude reference="96i-X1-AKw"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="constraints">
+                    <include reference="0cT-uR-iMr"/>
+                    <include reference="Gu4-C9-gHD"/>
+                    <include reference="UF5-J2-EEQ"/>
+                    <include reference="bPB-Ba-B06"/>
+                    <include reference="Uh8-hk-owm"/>
+                    <include reference="Uq4-aH-xW2"/>
+                    <exclude reference="vkn-xU-wcE"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="constraints">
+                    <include reference="r41-ge-f6I"/>
+                    <include reference="sz5-e7-Jo0"/>
+                    <include reference="yfI-XM-aXB"/>
+                    <include reference="yuO-Ur-KqI"/>
+                    <include reference="96i-X1-AKw"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
     <resources>
-        <image name="CookBookLogo.png" width="260" height="59"/>
         <image name="Notebook-Recipe-icon.png" width="256" height="256"/>
     </resources>
 </document>

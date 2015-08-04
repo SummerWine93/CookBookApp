@@ -106,31 +106,7 @@
             NSLog(@"Error while saving data: %@", error);
         }
     }];
-    /*
-     RecipeCategory *category = [NSEntityDescription
-     insertNewObjectForEntityForName:@"RecipeCategory" inManagedObjectContext: self.context];
-     [category setValue:@"First course" forKey:@"name"];
-     
-     RecipeCategory *category1 = [NSEntityDescription
-     insertNewObjectForEntityForName:@"RecipeCategory"      inManagedObjectContext: self.context];
-     [category1 setValue:@"Main course" forKey:@"name"];
-     
-     RecipeCategory *category2 = [NSEntityDescription
-     insertNewObjectForEntityForName:@"RecipeCategory"     inManagedObjectContext: self.context];
-     [category2 setValue:@"Desserts" forKey:@"name"];
-     
-     RecipeCategory *category3 = [NSEntityDescription
-     insertNewObjectForEntityForName:@"RecipeCategory"      inManagedObjectContext: self.context];
-     [category3 setValue:@"Drinks" forKey:@"name"];
-     
-     RecipeCategory *category4 = [NSEntityDescription
-     insertNewObjectForEntityForName:@"RecipeCategory"      inManagedObjectContext: self.context];
-     [category4 setValue:@"Salads" forKey:@"name"];
-     
-     RecipeCategory *category5 = [NSEntityDescription
-     insertNewObjectForEntityForName:@"RecipeCategory"      inManagedObjectContext: self.context];
-     [category5 setValue:@"Other" forKey:@"name"];
-     */
+   
     [self saveContext];
     
 }
@@ -162,6 +138,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
+   
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CookBookApp" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
@@ -178,7 +155,7 @@
                               NSInferMappingModelAutomaticallyOption: @YES,
                               NSSQLitePragmasOption : @{@"journal_mode" : @"DELETE"}
                               };
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CookBookApp.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CookBookApp 3.sqlite"];
     NSError *error = nil;
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
@@ -256,8 +233,8 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     [request setFetchBatchSize:20];
     [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    [NSFetchedResultsController deleteCacheWithName:@"Master"];
-    NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    [NSFetchedResultsController deleteCacheWithName:@"Master2"];
+    NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master2"];
     self.categoryFetchedResultsController = controller;
     _categoryFetchedResultsController.delegate = self;
     

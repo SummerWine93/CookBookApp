@@ -78,15 +78,11 @@
 #pragma mark - Image Setting Stuff
 
 - (IBAction)changeRecipeImage:(id)sender {
-    NSLog(@"Changing recipe image...");
-    
     alert = [[UIAlertView alloc] initWithTitle:@"Image picker" message:@"Set your own image" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Capture a photo", @"Load from gallery", nil];
     [alert show];
 }
 
 -(void)loadPhotoFromGallery{
-    NSLog(@"Load a photo from gallery");
-    
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
     imagePicker.allowsEditing = NO;
@@ -124,7 +120,8 @@
 
 -(void)dataAddedMessCleanUp{
     alert = [[UIAlertView alloc] initWithTitle:@"Info" message:@"Recipe added" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];    
+    [alert show];
+    
     self.recipeName.text = nil;
     self.recipeIngredients.text = nil;
     self.recipeSteps.text = nil;
@@ -152,6 +149,10 @@
     [newManagedObject setValue:self.recipeSteps.text forKey:@"steps"];
     [newManagedObject setValue:self.recipeIngredients.text forKey:@"ingredients"];
     [newManagedObject setValue:@NO forKey:@"isFavourite"];
+    [newManagedObject setValue:@YES forKey:@"isUserGenerated"];
+    
+    NSString *UUID = [[NSUUID UUID] UUIDString];
+    [newManagedObject setValue:UUID forKey:@"recipeId"];
     
     [self setTypeOfDishForObject:newManagedObject];
     [self setImageForObject:newManagedObject];
@@ -188,21 +189,25 @@
     for (RecipeCategory *key in fetchResults) {
         type = key;
     }
-    
     [newManagedObject setValue:type forKey:@"category"];
-    
+    [self.managedObjectContext save:nil];
 }
 
 -(void)setImageForObject: (NSManagedObject *)newManagedObject{
+    if ([newManagedObject valueForKey:@"recipeId"] == nil) {
+        NSString *UUID = [[NSUUID UUID] UUIDString];
+        [newManagedObject setValue:UUID forKey:@"recipeId"];
+    }
+    
     if (self.recipeImage.image != nil) {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSUInteger randomValueForName = arc4random_uniform((unsigned)RAND_MAX + 1);
-        NSString *name = [NSString stringWithFormat:@"img_%lu.png", (unsigned long)randomValueForName];
+        //NSUInteger randomValueForName = arc4random_uniform((unsigned)RAND_MAX + 1);
+        //NSString *name = [NSString stringWithFormat:@"img_%lu.png", (unsigned long)randomValueForName];
+        NSString *name = [NSString stringWithFormat:@"img_%@.png", [newManagedObject valueForKey:@"recipeId"]];
         [newManagedObject setValue:name forKey:@"image"];
-        
         //Creating the image to be used later
         [ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:NO];
     }
+    [self.managedObjectContext save:nil];
 }
 
 #pragma mark - Fetched results controller
@@ -230,24 +235,6 @@
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath{
     [self.fetchedResultsController performFetch:nil];
-    switch(type) {
-        case NSFetchedResultsChangeInsert:
-            NSLog(@"Inserted");
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            NSLog(@"Deleted");
-            break;
-            
-        case NSFetchedResultsChangeUpdate:
-            NSLog(@"Updated");
-            break;
-            
-        case NSFetchedResultsChangeMove:
-            
-            break;
-    }
-    //[self.fetchedResultsController fetchRequest];
 }
 
 #pragma mark - Navigation
@@ -256,10 +243,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   
     if ([segue.identifier isEqualToString:@"showRecipe"]||[[segue destinationViewController] isKindOfClass:[RecipesTableViewController class]]) {
-        
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
-        
-        RecipesTableViewController *vc = [segue destinationViewController];
     }
 }
 
@@ -321,5 +305,6 @@
     }
     typeOfDishChanged = YES;
 }
+
 
 @end
