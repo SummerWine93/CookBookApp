@@ -30,7 +30,6 @@
 		CE1933F11B6A389D002F4FCB /* skin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE1933D71B6A389D002F4FCB /* skin.jpg */; };
 		CE1933F21B6A389D002F4FCB /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1933D81B6A389D002F4FCB /* TableCell.xib */; };
 		CE1933F61B6A38D0002F4FCB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1933F41B6A38D0002F4FCB /* LaunchScreen.xib */; };
-		CE1933F71B6A38D0002F4FCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1933F51B6A38D0002F4FCB /* Main.storyboard */; };
 		CE1934051B6A3C88002F4FCB /* CookBookApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1934031B6A3C88002F4FCB /* CookBookApp.xcdatamodeld */; };
 		CE19340E1B6A3F26002F4FCB /* Desserts.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1934081B6A3F26002F4FCB /* Desserts.png */; };
 		CE19340F1B6A3F26002F4FCB /* Drinks.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1934091B6A3F26002F4FCB /* Drinks.png */; };
@@ -68,6 +67,8 @@
 		CE510B1B1B70D29F00F4E95D /* img_CB31219E-8189-456D-8938-3FCB7F6804D2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B0B1B70D29F00F4E95D /* img_CB31219E-8189-456D-8938-3FCB7F6804D2.png */; };
 		CE510B1D1B70D2DD00F4E95D /* CookBookAppData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CE510B1C1B70D2DD00F4E95D /* CookBookAppData.sqlite */; };
 		CE510B201B70DD4600F4E95D /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE510B1F1B70DD4600F4E95D /* LaunchScreenViewController.m */; };
+		CE510B231B723B8A00F4E95D /* FullSizeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE510B221B723B8A00F4E95D /* FullSizeImageViewController.m */; };
+		CE510B251B72440700F4E95D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE510B241B72440700F4E95D /* Main.storyboard */; };
 		CEE134B71B6B7EEE00FD7E10 /* defaultCellImage.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE134B61B6B7EEE00FD7E10 /* defaultCellImage.png */; };
 		CEE134BD1B6BBC9300FD7E10 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE134BC1B6BBC9300FD7E10 /* AboutTableViewController.m */; };
 		CEE134BF1B6F5AF700FD7E10 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE134BE1B6F5AF700FD7E10 /* trash.png */; };
@@ -123,7 +124,6 @@
 		CE1933D71B6A389D002F4FCB /* skin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = skin.jpg; sourceTree = "<group>"; };
 		CE1933D81B6A389D002F4FCB /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
 		CE1933F41B6A38D0002F4FCB /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
-		CE1933F51B6A38D0002F4FCB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		CE1934041B6A3C88002F4FCB /* CookBookApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CookBookApp.xcdatamodel; sourceTree = "<group>"; };
 		CE1934081B6A3F26002F4FCB /* Desserts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Desserts.png; sourceTree = "<group>"; };
 		CE1934091B6A3F26002F4FCB /* Drinks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drinks.png; sourceTree = "<group>"; };
@@ -166,6 +166,9 @@
 		CE510B1C1B70D2DD00F4E95D /* CookBookAppData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = CookBookAppData.sqlite; sourceTree = "<group>"; };
 		CE510B1E1B70DD4600F4E95D /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
 		CE510B1F1B70DD4600F4E95D /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
+		CE510B211B723B8A00F4E95D /* FullSizeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullSizeImageViewController.h; sourceTree = "<group>"; };
+		CE510B221B723B8A00F4E95D /* FullSizeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullSizeImageViewController.m; sourceTree = "<group>"; };
+		CE510B241B72440700F4E95D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CEE134B61B6B7EEE00FD7E10 /* defaultCellImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultCellImage.png; sourceTree = "<group>"; };
 		CEE134BB1B6BBC9300FD7E10 /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
 		CEE134BC1B6BBC9300FD7E10 /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
@@ -231,9 +234,9 @@
 			children = (
 				CE1934061B6A3EB3002F4FCB /* Images */,
 				CE1934031B6A3C88002F4FCB /* CookBookApp.xcdatamodeld */,
+				CE510B241B72440700F4E95D /* Main.storyboard */,
 				CE1933D81B6A389D002F4FCB /* TableCell.xib */,
 				CE1933F41B6A38D0002F4FCB /* LaunchScreen.xib */,
-				CE1933F51B6A38D0002F4FCB /* Main.storyboard */,
 				CE19338C1B6A37EF002F4FCB /* Info.plist */,
 				CE19338D1B6A37EF002F4FCB /* main.m */,
 			);
@@ -354,6 +357,8 @@
 				CE1933D21B6A389D002F4FCB /* RecipeViewController.m */,
 				CE510B1E1B70DD4600F4E95D /* LaunchScreenViewController.h */,
 				CE510B1F1B70DD4600F4E95D /* LaunchScreenViewController.m */,
+				CE510B211B723B8A00F4E95D /* FullSizeImageViewController.h */,
+				CE510B221B723B8A00F4E95D /* FullSizeImageViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -475,12 +480,12 @@
 				CE1934281B6A4078002F4FCB /* Bookmark-25.png in Resources */,
 				CE510B0D1B70D29F00F4E95D /* img_2FDB0A89-F3E9-49EE-8C65-B58578E32133.png in Resources */,
 				CE19340E1B6A3F26002F4FCB /* Desserts.png in Resources */,
+				CE510B251B72440700F4E95D /* Main.storyboard in Resources */,
 				CE1934201B6A4078002F4FCB /* edit.png in Resources */,
 				CE510B1D1B70D2DD00F4E95D /* CookBookAppData.sqlite in Resources */,
 				CE1933E01B6A389D002F4FCB /* Categories.json in Resources */,
 				CE1933E91B6A389D002F4FCB /* Notebook-Recipe-icon.png in Resources */,
 				CE1933F11B6A389D002F4FCB /* skin.jpg in Resources */,
-				CE1933F71B6A38D0002F4FCB /* Main.storyboard in Resources */,
 				CE1934121B6A3F26002F4FCB /* Salads.png in Resources */,
 				CE1933EC1B6A389D002F4FCB /* Recipes.json in Resources */,
 				CE1934241B6A4078002F4FCB /* like.png in Resources */,
@@ -549,6 +554,7 @@
 				CE1933E61B6A389D002F4FCB /* FavouriteRecipesTableViewController.m in Sources */,
 				CE1934391B6A5354002F4FCB /* Recipe.m in Sources */,
 				CE1933EE1B6A389D002F4FCB /* RecipeViewController.m in Sources */,
+				CE510B231B723B8A00F4E95D /* FullSizeImageViewController.m in Sources */,
 				CE1933DB1B6A389D002F4FCB /* AddRecipeViewController.m in Sources */,
 				CE1933E21B6A389D002F4FCB /* CategoriesTableViewController.m in Sources */,
 				CE1933ED1B6A389D002F4FCB /* RecipesTableViewController.m in Sources */,

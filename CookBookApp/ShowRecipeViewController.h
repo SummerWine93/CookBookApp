@@ -21,6 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *recipeIngredientsHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *recipeStepsHeight;
+@property (weak, nonatomic) IBOutlet UIScrollView *fullScreenImageScrollView;
 
 - (IBAction)changeRecipeImage:(id)sender;
 - (IBAction)editRecipe:(id)sender;

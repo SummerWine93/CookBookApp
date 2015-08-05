@@ -7,6 +7,7 @@
 //
 
 #import "ShowRecipeViewController.h"
+#import "FullSizeImageViewController.h"
 
 @interface ShowRecipeViewController (){
     Recipe *object;    
@@ -191,15 +192,11 @@ const int deleteAlertTag = 999;
         [self changeRecipeImage:object];
     }
     else{
-        alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:@"Image" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString *path = [documentsDirectory stringByAppendingPathComponent:object.image];
-        UIImage *image = [UIImage imageWithContentsOfFile:path];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, self.view.frame.size.width, 300)];
-        [imageView setImage:image];
-        [alert addSubview:imageView];
-        [alert show];
+        FullSizeImageViewController *imageViewController = [FullSizeImageViewController new];
+        self.scrollView.hidden = NO;
+        imageViewController.scrollView = self.scrollView;
+        //imageViewController
+        
     }
 }
 

@@ -723,6 +723,9 @@
                                             <constraint firstItem="J9U-fD-gKV" firstAttribute="leading" secondItem="wff-s5-9Wn" secondAttribute="leading" constant="6" id="fWM-4D-FJt"/>
                                         </constraints>
                                     </view>
+                                    <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5x-rD-6aM">
+                                        <rect key="frame" x="0.0" y="-10" width="401" height="430"/>
+                                    </scrollView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Xv4-ew-JY8" firstAttribute="leading" secondItem="bgZ-3F-lit" secondAttribute="leading" constant="93" id="37g-e5-9Al"/>
@@ -808,6 +811,7 @@
                         <outlet property="categoryTable" destination="Rwd-hw-23T" id="QTf-Tw-hrG"/>
                         <outlet property="editMenuView" destination="UD1-bb-ri0" id="8QH-Oc-40B"/>
                         <outlet property="favouriteButton" destination="cOH-WC-vuv" id="MxL-ud-YF3"/>
+                        <outlet property="fullScreenImageScrollView" destination="V5x-rD-6aM" id="Dv0-GW-fDe"/>
                         <outlet property="imagePickerGestureRecogniser" destination="uoj-R4-VHJ" id="5s0-YA-KJ9"/>
                         <outlet property="loadImageView" destination="vdC-ol-rrO" id="bIz-uB-8ld"/>
                         <outlet property="optionsMenuView" destination="J9U-fD-gKV" id="JF8-kc-1In"/>
@@ -830,7 +834,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1339" y="-147"/>
+            <point key="canvasLocation" x="1339" y="-147.5"/>
         </scene>
         <!--Info-->
         <scene sceneID="3tw-kX-Qb2">

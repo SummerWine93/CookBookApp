@@ -43,7 +43,7 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:name];
     
-    UIImage *newImage = [self drawImage:image InContextWithSize:newSize];
+    UIImage *newImage = [self drawImage:image InContextWithSize:newSize];    
     [UIImagePNGRepresentation(newImage) writeToFile:path atomically:YES];
     
     return newImage;
