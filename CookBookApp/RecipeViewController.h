@@ -40,7 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *typeOfDish;
 @property (weak, nonatomic) IBOutlet UITextView *recipeIngredients;
 @property (weak, nonatomic) IBOutlet UITextView *recipeSteps;
-@property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
+@property (retain, nonatomic) IBOutlet UIImageView *recipeImage;
 
 @property (weak, nonatomic) IBOutlet UIImageView *loadImageView;
 @property (weak, nonatomic) IBOutlet UIView *optionsView;

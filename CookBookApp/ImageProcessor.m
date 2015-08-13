@@ -70,7 +70,7 @@
         CGFloat widthFactor = newSize.width/oldSize.width;
         CGFloat heightFactor = newSize.height/oldSize.height;
         
-        if (widthFactor > heightFactor) {
+        if (((widthFactor > heightFactor)||(heightFactor > 1))&&(widthFactor < 1)) {
             scaleFactor = widthFactor;
         }
         else{
@@ -78,10 +78,12 @@
         }
         newSize.width = scaleFactor*oldSize.width;
         newSize.height = scaleFactor*oldSize.height;
-    }
+}
     
     UIImage *newImage = [self drawImage:image InContextWithSize:newSize];
     return newImage;
 }
+
+
 
 @end

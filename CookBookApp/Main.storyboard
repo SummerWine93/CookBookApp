@@ -813,6 +813,10 @@
                                     </mask>
                                 </variation>
                             </toolbar>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mox-7e-Jfs" customClass="ImageZoomView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -821,12 +825,34 @@
                             <constraint firstItem="bgZ-3F-lit" firstAttribute="top" secondItem="LvE-v7-myy" secondAttribute="bottom" id="WKc-6t-WzJ"/>
                             <constraint firstItem="bgZ-3F-lit" firstAttribute="top" secondItem="VAG-mj-W51" secondAttribute="top" id="Wmn-5O-g7W"/>
                             <constraint firstItem="bgZ-3F-lit" firstAttribute="leading" secondItem="MeR-TW-4R0" secondAttribute="leading" id="aa5-7y-Fov"/>
+                            <constraint firstItem="Mox-7e-Jfs" firstAttribute="leading" secondItem="MeR-TW-4R0" secondAttribute="leadingMargin" id="i1L-Di-S6h"/>
                             <constraint firstItem="bgZ-3F-lit" firstAttribute="centerX" secondItem="MeR-TW-4R0" secondAttribute="centerX" id="igp-GI-wmm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mox-7e-Jfs" secondAttribute="trailing" id="pOL-fJ-56m"/>
+                            <constraint firstItem="uh6-cI-QbX" firstAttribute="top" secondItem="Mox-7e-Jfs" secondAttribute="bottom" id="tpb-XW-Ykg"/>
+                            <constraint firstItem="Mox-7e-Jfs" firstAttribute="top" secondItem="VAG-mj-W51" secondAttribute="bottom" id="u96-le-bNT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Mox-7e-Jfs"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="i1L-Di-S6h"/>
+                                <exclude reference="pOL-fJ-56m"/>
+                                <exclude reference="u96-le-bNT"/>
+                                <exclude reference="tpb-XW-Ykg"/>
+                            </mask>
+                        </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="bgZ-3F-lit"/>
                                 <include reference="VAG-mj-W51"/>
+                                <include reference="Mox-7e-Jfs"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="i1L-Di-S6h"/>
+                                <include reference="pOL-fJ-56m"/>
+                                <include reference="u96-le-bNT"/>
+                                <include reference="tpb-XW-Ykg"/>
                             </mask>
                         </variation>
                     </view>
@@ -843,6 +869,7 @@
                         <outlet property="editMenuView" destination="UD1-bb-ri0" id="8QH-Oc-40B"/>
                         <outlet property="favouriteButton" destination="cOH-WC-vuv" id="MxL-ud-YF3"/>
                         <outlet property="imagePickerGestureRecogniser" destination="uoj-R4-VHJ" id="5s0-YA-KJ9"/>
+                        <outlet property="imageZoomView" destination="Mox-7e-Jfs" id="0PR-VD-IyD"/>
                         <outlet property="loadImageView" destination="vdC-ol-rrO" id="bIz-uB-8ld"/>
                         <outlet property="optionsMenuView" destination="J9U-fD-gKV" id="JF8-kc-1In"/>
                         <outlet property="optionsView" destination="wff-s5-9Wn" id="nCv-LY-24y"/>
@@ -901,7 +928,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delphi Training Center Manager: Valeriy Bilokonnyy Author: Anastasiia Yarovenko" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V6v-Mg-Rcg">
                                         <rect key="frame" x="8" y="8" width="236" height="68"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

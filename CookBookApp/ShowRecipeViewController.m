@@ -13,7 +13,7 @@
 #import "ImageZoomView.h"
 
 @interface ShowRecipeViewController (){
-    Recipe *object;
+    Recipe *recipe;
     BOOL imageWasChanged;
 }
 @end
@@ -23,11 +23,11 @@
 
 const int deleteAlertTag = 999;
 
-@synthesize recipeName = _recipeName;
-
 -(void)viewDidLoad{    
     self.recipeName.text = self.nameId;
     [super viewDidLoad];
+    [self.recipeImage setValue:nil forKey:@"image"];
+    [self.recipeImage addObserver:self forKeyPath:@"image" options:0 context:nil];
     [self fillThePageWithData];
     [self useFavouriteViewSettings];
     self.optionsView.layer.cornerRadius = 5;
@@ -41,17 +41,11 @@ const int deleteAlertTag = 999;
     imageWasChanged = NO;
 }
 
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self reloadInputViews];
-    //[self.navigationController setToolbarHidden:NO];
-}
-
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"Touches began");
-    [self.view endEditing:YES];
-    [super touchesBegan:touches withEvent:event];
+    
 }
 
 #pragma mark -
@@ -60,6 +54,7 @@ const int deleteAlertTag = 999;
 - (IBAction)editRecipe:(id)sender {
     [self switchEditingModeView];
 }
+
 
 -(void)switchEditingModeView{
     self.optionsMenuView.hidden = !self.optionsMenuView.isHidden;
@@ -75,25 +70,28 @@ const int deleteAlertTag = 999;
     imageWasChanged = NO;
 }
 
+
 - (IBAction)addRecipeToFavourite:(id)sender {
-    if([object.isFavourite boolValue]) {
-        object.isFavourite = @0;
+    if([recipe.isFavourite boolValue]) {
+        recipe.isFavourite = @0;
     }
     else{
-        object.isFavourite = @1;        
+        recipe.isFavourite = @1;
     }
     [self useFavouriteViewSettings];
-    NSLog(@"Favourite: %@", object.isFavourite);
+    NSLog(@"Favourite: %@", recipe.isFavourite);
 }
 
+
 -(void)useFavouriteViewSettings{
-    if([object.isFavourite boolValue]) {
+    if([recipe.isFavourite boolValue]) {
         [self.favouriteButton setImage:[UIImage imageNamed:@"fav-delete.png"] forState:UIControlStateNormal];
     }
     else{
         [self.favouriteButton setImage:[UIImage imageNamed:@"fav-add.png"] forState:UIControlStateNormal];
     }
 }
+
 
 -(IBAction)deleteRecipe:(id)sender{
     alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Do you want to delete this recipe?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
@@ -104,16 +102,17 @@ const int deleteAlertTag = 999;
     [self.managedObjectContext save:nil];
 }
 
+
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if ([alertView.title  isEqual: @"Warning"]) {
         switch (buttonIndex) {
             case 1:{
-                object = [context existingObjectWithID:self.objectId error:nil];
-                
+                recipe = [context existingObjectWithID:self.objectId error:nil];
+                [[NSNotificationCenter defaultCenter] removeObserver:self];
                 NSError *error = nil;
-                NSString *imagePath = [PathManager pathInDocumentsDirectoryForName:object.image];
+                NSString *imagePath = [PathManager pathInDocumentsDirectoryForName:recipe.image];
                 [[NSFileManager defaultManager] removeItemAtPath:imagePath error:&error];                
-                [context deleteObject:object];
+                [context deleteObject:recipe];
                 [context save:nil];
                 
                 alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:@"The recipe is deleted" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -130,6 +129,7 @@ const int deleteAlertTag = 999;
     }
 }
 
+
 - (IBAction)saveChanges:(id)sender {
     [self updateRecipe];
     alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:@"The recipe is saved" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -137,6 +137,7 @@ const int deleteAlertTag = 999;
     [self switchEditingModeView];
     [self viewDidLoad];
 }
+
 
 - (IBAction)cancelChanges:(id)sender {
     [self switchEditingModeView];
@@ -147,6 +148,7 @@ const int deleteAlertTag = 999;
 #pragma mark gestureRecogniser
 
 -(void)singleTapGestureCaptured:(UITapGestureRecognizer*)gesture{
+    NSLog(@"GESTURE RECOGNISER #1");
     self.typePickerView.hidden = YES;
 }
 
@@ -154,30 +156,24 @@ const int deleteAlertTag = 999;
 
 -(void)fillThePageWithData{    
     context = [self.fetchedResultsController managedObjectContext];
-    object = [context existingObjectWithID:self.objectId error:nil];
+    recipe = [context existingObjectWithID:self.objectId error:nil];
     
-    self.recipeName.text = object.name;
-    self.recipeIngredients.text = object.ingredients;
-        self.recipeSteps.text = object.steps;
-    [self.typeOfDish setTitle:object.category.name forState:UIControlStateNormal];
+    self.recipeName.text = recipe.name;
+    self.recipeIngredients.text = recipe.ingredients;
+        self.recipeSteps.text = recipe.steps;
+    [self.typeOfDish setTitle:recipe.category.name forState:UIControlStateNormal];
     // Loading the image
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:object.image];
-    
+    NSString *path = [PathManager pathInDocumentsDirectoryForName:recipe.image];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     if (image != nil) {
         self.recipeImage.image = image;
     }
     // if there is no image the app loads a fefault one for it and sets it as recipeImage
     else{
-        self.recipeImage.image = [UIImage imageNamed:object.image];
-        if (self.recipeImage.image == nil) {
-            self.recipeImage.image = [UIImage imageNamed:@"defaultImage.jpg"];
-        }
-        [self.view setNeedsDisplay];
-        [self updateRecipe];
+        //self.recipeImage.image = [UIImage imageNamed:object.image];
+        [self.recipeImage setValue:[UIImage imageNamed:recipe.image] forKey:@"image"];
+        //[self updateRecipe];
+        //[self setRecipeImage:self.recipeImage];
     }
     // Here the size for the textbox is set dynamically
     CGSize sizeForRecipeSteps = [self.recipeSteps sizeThatFits: self.recipeSteps.textContainer.size];
@@ -188,62 +184,75 @@ const int deleteAlertTag = 999;
     [self.recipeIngredients.layoutManager ensureLayoutForTextContainer:self.recipeIngredients.textContainer];
 }
 
+
 -(void)updateRecipe{
-    object.name = self.recipeName.text;
-    object.ingredients = self.recipeIngredients.text;
-    object.steps = self.recipeSteps.text;
+    recipe.name = self.recipeName.text;
+    recipe.ingredients = self.recipeIngredients.text;
+    recipe.steps = self.recipeSteps.text;
     if (typeOfDishChanged) {
-        [self setTypeOfDishForObject: object];
+        [self setTypeOfDishForObject: recipe];
     }
     if (imageWasChanged) {
-        [self setImageForObject: object];
+        [self setImageForObject: recipe];
     }
 }
 
 
 -(IBAction)imageTapped:(id)sender{
     if (self.optionsMenuView.isHidden) {
-        [self changeRecipeImage:object];
+        [self changeRecipeImage:recipe];
         imageWasChanged = YES;
     }
     else{
         FullSizeImageViewController *imageViewController = [FullSizeImageViewController new];
         imageViewController.scrollView = self.scrollView;
-        imageViewController.imageName = object.name;
-        //self.iv = [[UIImageView alloc] initWithImage:self.recipeImage.image];
-        self.iv = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 10, self.view.frame.origin.y + 100, 300, 300)];
-        [self.iv setImage:self.recipeImage.image];
-        //self.iv.backgroundColor = [UIColor redColor];
-        //self.scrollView.backgroundColor = [UIColor blackColor];
-        //[self.navigationController.topViewController.view addSubview:self.iv];
+        imageViewController.imageName = recipe.name;
         //XLMediaZoom *imageZoom = [[XLMediaZoom alloc] initWithAnimationTime:@(0.2) image:self.iv blurEffect:YES];
         //[imageZoom setPreservesSuperviewLayoutMargins:YES];
         //[self.navigationController.topViewController.view addSubview:imageZoom];
         //[imageZoom show];
-        
-        ImageZoomView *izv = [[ImageZoomView alloc] initWithFrame:
-                              CGRectMake(self.view.frame.origin.x,
-                                         self.view.frame.origin.y,
-                                         self.view.frame.size.width,
-                                         self.view.frame.size.height) andImage:self.recipeImage.image];
-        [self.navigationController.topViewController.view addSubview:izv];
-        
-        
-        //alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:@"IMAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        //[alert setFrame:CGRectMake(self.view.frame.origin.x + 10, self.view.frame.origin.y + 100, self.view.frame.size.width - 10, 300)];
-        if (floor(NSFoundationVersionNumber)>NSFoundationVersionNumber_iOS_6_1) {
-            [alert setValue:self.iv forKey:@"accessoryView"];
-        }
-        else{
-            [alert addSubview:self.iv];
-        }
-        [alert show];
-        alert.frame = CGRectMake(self.view.frame.origin.x + 10, self.view.frame.origin.y + 100, self.view.frame.size.width - 10, 300);
-        
+        [self addZoomedImageView];
         [self.view setNeedsDisplay];
         NSLog(@"Click!");
-        
     }
+}
+
+-(void)addZoomedImageView{
+    self.imageZoomView = [[ImageZoomView alloc] initWithFrame:
+                          CGRectMake(self.view.frame.origin.x,
+                                     self.view.frame.origin.y,
+                                     self.view.frame.size.width,
+                                     self.view.frame.size.height) andImage:self.recipeImage.image];
+    [self.imageZoomView becomeFirstResponder];
+    UITapGestureRecognizer *tapRecogniser = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeZoomedView)];
+    [self.imageZoomView addGestureRecognizer:tapRecogniser];
+    self.imageZoomView.hidden = NO;
+    [self.navigationController.topViewController.view addSubview:self.imageZoomView];
+}
+
+
+-(void)closeZoomedView{
+    NSLog(@"Close zoomed view");
+    self.imageZoomView.hidden = YES;
+}
+
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    [self.imageZoomView setHidden:YES];
+    self.imageZoomView = nil;
+    //[self viewDidAppear:YES];
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    [self addZoomedImageView];
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.recipeImage removeObserver:self forKeyPath:@"image"];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -253,9 +262,17 @@ const int deleteAlertTag = 999;
     [super viewDidDisappear:animated];
 }
 
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [self switchEditingModeView];
     NSLog(@"SEGUE");
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"image"]) {
+        NSLog(@"Image was changed");
+        [self setRecipeImage: self.recipeImage];
+    }
 }
 
 @end

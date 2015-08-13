@@ -248,6 +248,8 @@
 				CE1934291B6A40C4002F4FCB /* CoreDataFiles */,
 				CE1933C81B6A389D002F4FCB /* ImageProcessor.h */,
 				CE1933C91B6A389D002F4FCB /* ImageProcessor.m */,
+				CE510B281B734EB300F4E95D /* PathManager.h */,
+				CE510B291B734EB300F4E95D /* PathManager.m */,
 				CE19338F1B6A37EF002F4FCB /* AppDelegate.h */,
 				CE1933901B6A37EF002F4FCB /* AppDelegate.m */,
 				CE1933951B6A37EF002F4FCB /* ViewController.h */,
@@ -340,8 +342,6 @@
 		CE1934291B6A40C4002F4FCB /* CoreDataFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CE510B281B734EB300F4E95D /* PathManager.h */,
-				CE510B291B734EB300F4E95D /* PathManager.m */,
 				CE1934371B6A5354002F4FCB /* Recipe.h */,
 				CE1934381B6A5354002F4FCB /* Recipe.m */,
 				CE1934341B6A5353002F4FCB /* RecipeCategory.h */,

@@ -25,6 +25,7 @@
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     //image = [UIImage imageNamed:@"defaultImage.jpg"];
     [self.imageView setImage:image];
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
     self.scrollView.delegate = self;
 }
 

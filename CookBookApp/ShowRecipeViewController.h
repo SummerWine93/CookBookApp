@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RecipeViewController.h"
+#include "ImageZoomView.h"
 
 
 @interface ShowRecipeViewController : RecipeViewController <UITextViewDelegate>{
@@ -21,8 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *recipeIngredientsHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *recipeStepsHeight;
-//@property (weak, nonatomic) IBOutlet UIScrollView *fullScreenImageScrollView;
-@property (strong, nonatomic) UIImageView *iv;
+@property (retain, nonatomic) IBOutlet ImageZoomView *imageZoomView;
 
 - (IBAction)changeRecipeImage:(id)sender;
 - (IBAction)editRecipe:(id)sender;
