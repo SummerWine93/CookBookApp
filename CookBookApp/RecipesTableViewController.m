@@ -159,9 +159,10 @@
     }
     Recipe *cellRecipe = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.recipeName.text = cellRecipe.name;
+    NSString *name = [NSString stringWithFormat:@"t_%@", cellRecipe.image];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:cellRecipe.image];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:name];    
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     if (image == nil) {
         image = [UIImage imageNamed:cellRecipe.image];

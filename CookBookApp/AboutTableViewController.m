@@ -51,36 +51,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    if (self.view.window.frame.size.width <= 320) {
+    //if (self.view.window.frame.size.width <= 320) {
         cell.textLabel.numberOfLines = 4;
+    //}
+    if (indexPath.row == 0) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, cell.frame.size.width * 0.2, cell.frame.size.height - 5)];
+        [imageView setImage:[UIImage imageNamed:@"delphi_logo_blue_cropped.png"]];
+        [cell.contentView addSubview:imageView];
+        cell.textLabel.text = @"Delphi Training Center \n Manager: Valeriy Bilokonnyy \n Author: Anastasiia Yarovenko";
     }
     
-    if (indexPath.row < 3) {
+    if ((indexPath.row < 3)&&(indexPath.row > 0)) {
         cell.textLabel.text = [cellText objectAtIndex:indexPath.row];
-    }
-    else{
-        UIImageView *imageView;
-        if (self.view.window.frame.size.width >= 400) {
-            imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.window.frame.size.width * 1.5 / 2, self.view.window.frame.size.width * 3 / 6 )];
-        }
-        else{
-            imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.window.frame.size.width, self.view.window.frame.size.width * 2 / 3 )];
-        }
-        CGPoint centerImageView = imageView.center;
-        centerImageView.x = self.view.center.x;
-        imageView.center = centerImageView;
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        imageView.image = [UIImage imageNamed:@"defaultImage.jpg"];
-        [cell.contentView addSubview:imageView];
     }
     cell.userInteractionEnabled = NO;
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 3) {
-        return 200;
-    }
+    //if (indexPath.row == 3) {
+        //return 200;
+    //}
     return 100;
 }
 

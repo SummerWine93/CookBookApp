@@ -16,10 +16,16 @@
 
 @synthesize categoryPredicateData = _categoryPredicateData;
 
+-(id)init{
+    NSLog(@"Init");
+    return [self initWithStyle:UITableViewStylePlain];
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    //self.tableView.style = UITableViewStylePlain;
 }
 
 -(void)viewDidAppear:(BOOL)animated{    
@@ -55,6 +61,10 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{    
     return nil;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.1;
 }
 
 

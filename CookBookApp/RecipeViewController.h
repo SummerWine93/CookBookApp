@@ -14,7 +14,7 @@
 
 @class RecipesTableViewController;
 
-@protocol RecipeChangedDelegate <NSObject>
+@protocol RecipeChangedDelegate <NSObject, UIScrollViewDelegate>
 
 -(void)notifyItSomehow;
 
@@ -48,6 +48,8 @@
 @property (weak, nonatomic) IBOutlet UIView *typePickerView;
 @property RecipesTableViewController *correspondingTableViewController;
 @property (weak, nonatomic) IBOutlet UITableView *categoryTable;
+
+@property (weak, nonatomic) UITextField *activeTextField;
 
 @property (strong) NSString *nameId;
 

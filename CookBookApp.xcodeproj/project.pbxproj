@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A8827EBA84B47EB1F453F74 /* libPods-CookBookApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51EC9C7A589CD7E103FFA988 /* libPods-CookBookApp.a */; };
 		CE19338E1B6A37EF002F4FCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19338D1B6A37EF002F4FCB /* main.m */; };
 		CE1933911B6A37EF002F4FCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1933901B6A37EF002F4FCB /* AppDelegate.m */; };
 		CE1933971B6A37EF002F4FCB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1933961B6A37EF002F4FCB /* ViewController.m */; };
@@ -69,9 +70,14 @@
 		CE510B201B70DD4600F4E95D /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE510B1F1B70DD4600F4E95D /* LaunchScreenViewController.m */; };
 		CE510B231B723B8A00F4E95D /* FullSizeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE510B221B723B8A00F4E95D /* FullSizeImageViewController.m */; };
 		CE510B251B72440700F4E95D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE510B241B72440700F4E95D /* Main.storyboard */; };
+		CE510B271B726D0000F4E95D /* delphi.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B261B726D0000F4E95D /* delphi.png */; };
+		CE510B2A1B734EB300F4E95D /* PathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE510B291B734EB300F4E95D /* PathManager.m */; };
+		CE510B2C1B735EB100F4E95D /* delphi_logo_blue_cropped.png in Resources */ = {isa = PBXBuildFile; fileRef = CE510B2B1B735EB100F4E95D /* delphi_logo_blue_cropped.png */; };
+		CE510B2F1B736D0D00F4E95D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE510B2E1B736D0D00F4E95D /* AboutViewController.m */; };
 		CEE134B71B6B7EEE00FD7E10 /* defaultCellImage.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE134B61B6B7EEE00FD7E10 /* defaultCellImage.png */; };
 		CEE134BD1B6BBC9300FD7E10 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE134BC1B6BBC9300FD7E10 /* AboutTableViewController.m */; };
 		CEE134BF1B6F5AF700FD7E10 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE134BE1B6F5AF700FD7E10 /* trash.png */; };
+		CEEDCE6A1B7B978B00C44D4E /* ImageZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEDCE691B7B978B00C44D4E /* ImageZoomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +91,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		230B5FB9A5AFCB87B371E68E /* Pods-CookBookApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookBookApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CookBookApp/Pods-CookBookApp.debug.xcconfig"; sourceTree = "<group>"; };
+		51EC9C7A589CD7E103FFA988 /* libPods-CookBookApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CookBookApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79F61346E12922D7846BCA82 /* Pods-CookBookApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookBookApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CookBookApp/Pods-CookBookApp.release.xcconfig"; sourceTree = "<group>"; };
 		CE1933881B6A37EF002F4FCB /* CookBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE19338C1B6A37EF002F4FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE19338D1B6A37EF002F4FCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -169,10 +178,18 @@
 		CE510B211B723B8A00F4E95D /* FullSizeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullSizeImageViewController.h; sourceTree = "<group>"; };
 		CE510B221B723B8A00F4E95D /* FullSizeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullSizeImageViewController.m; sourceTree = "<group>"; };
 		CE510B241B72440700F4E95D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CE510B261B726D0000F4E95D /* delphi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delphi.png; sourceTree = "<group>"; };
+		CE510B281B734EB300F4E95D /* PathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathManager.h; sourceTree = "<group>"; };
+		CE510B291B734EB300F4E95D /* PathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathManager.m; sourceTree = "<group>"; };
+		CE510B2B1B735EB100F4E95D /* delphi_logo_blue_cropped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delphi_logo_blue_cropped.png; sourceTree = "<group>"; };
+		CE510B2D1B736D0D00F4E95D /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		CE510B2E1B736D0D00F4E95D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		CEE134B61B6B7EEE00FD7E10 /* defaultCellImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultCellImage.png; sourceTree = "<group>"; };
 		CEE134BB1B6BBC9300FD7E10 /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
 		CEE134BC1B6BBC9300FD7E10 /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
 		CEE134BE1B6F5AF700FD7E10 /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
+		CEEDCE681B7B978B00C44D4E /* ImageZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageZoomView.h; sourceTree = "<group>"; };
+		CEEDCE691B7B978B00C44D4E /* ImageZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageZoomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8827EBA84B47EB1F453F74 /* libPods-CookBookApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +211,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98409F2754EED2588B77BB17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				230B5FB9A5AFCB87B371E68E /* Pods-CookBookApp.debug.xcconfig */,
+				79F61346E12922D7846BCA82 /* Pods-CookBookApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CE19337F1B6A37EF002F4FCB = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +227,8 @@
 				CE19338A1B6A37EF002F4FCB /* CookBookApp */,
 				CE1933A71B6A37EF002F4FCB /* CookBookAppTests */,
 				CE1933891B6A37EF002F4FCB /* Products */,
+				98409F2754EED2588B77BB17 /* Pods */,
+				EB9794E362A375FE778DF8A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,6 +292,8 @@
 		CE1934061B6A3EB3002F4FCB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CE510B2B1B735EB100F4E95D /* delphi_logo_blue_cropped.png */,
+				CE510B261B726D0000F4E95D /* delphi.png */,
 				CEE134C01B6F723400FD7E10 /* Default */,
 				CEE134BE1B6F5AF700FD7E10 /* trash.png */,
 				CE1933CB1B6A389D002F4FCB /* Notebook-Recipe-icon.png */,
@@ -309,6 +340,8 @@
 		CE1934291B6A40C4002F4FCB /* CoreDataFiles */ = {
 			isa = PBXGroup;
 			children = (
+				CE510B281B734EB300F4E95D /* PathManager.h */,
+				CE510B291B734EB300F4E95D /* PathManager.m */,
 				CE1934371B6A5354002F4FCB /* Recipe.h */,
 				CE1934381B6A5354002F4FCB /* Recipe.m */,
 				CE1934341B6A5353002F4FCB /* RecipeCategory.h */,
@@ -359,6 +392,10 @@
 				CE510B1F1B70DD4600F4E95D /* LaunchScreenViewController.m */,
 				CE510B211B723B8A00F4E95D /* FullSizeImageViewController.h */,
 				CE510B221B723B8A00F4E95D /* FullSizeImageViewController.m */,
+				CE510B2D1B736D0D00F4E95D /* AboutViewController.h */,
+				CE510B2E1B736D0D00F4E95D /* AboutViewController.m */,
+				CEEDCE681B7B978B00C44D4E /* ImageZoomView.h */,
+				CEEDCE691B7B978B00C44D4E /* ImageZoomView.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -397,6 +434,14 @@
 			name = Default;
 			sourceTree = "<group>";
 		};
+		EB9794E362A375FE778DF8A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51EC9C7A589CD7E103FFA988 /* libPods-CookBookApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -404,9 +449,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE1933AE1B6A37EF002F4FCB /* Build configuration list for PBXNativeTarget "CookBookApp" */;
 			buildPhases = (
+				17FA2A5479E93289117D313B /* Check Pods Manifest.lock */,
 				CE1933841B6A37EF002F4FCB /* Sources */,
 				CE1933851B6A37EF002F4FCB /* Frameworks */,
 				CE1933861B6A37EF002F4FCB /* Resources */,
+				B51337CB1638C67AE5DCB8CE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -478,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1934281B6A4078002F4FCB /* Bookmark-25.png in Resources */,
+				CE510B2C1B735EB100F4E95D /* delphi_logo_blue_cropped.png in Resources */,
 				CE510B0D1B70D29F00F4E95D /* img_2FDB0A89-F3E9-49EE-8C65-B58578E32133.png in Resources */,
 				CE19340E1B6A3F26002F4FCB /* Desserts.png in Resources */,
 				CE510B251B72440700F4E95D /* Main.storyboard in Resources */,
@@ -498,6 +546,7 @@
 				CE510B191B70D29F00F4E95D /* img_A58C31C6-59B7-40AD-A0A7-7F3CDA039EAE.png in Resources */,
 				CE510B111B70D29F00F4E95D /* img_8D9D1BFB-6391-464F-A839-479D8FC9F109.png in Resources */,
 				CE1934111B6A3F26002F4FCB /* Other.png in Resources */,
+				CE510B271B726D0000F4E95D /* delphi.png in Resources */,
 				CE510B161B70D29F00F4E95D /* img_996CA17B-157D-422B-BA9F-E09DE3E87639.png in Resources */,
 				CE1934251B6A4078002F4FCB /* fav-add.png in Resources */,
 				CE510B0C1B70D29F00F4E95D /* img_1D3CE5A8-F6ED-4F33-8B60-476B56E389A1.png in Resources */,
@@ -534,19 +583,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17FA2A5479E93289117D313B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B51337CB1638C67AE5DCB8CE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CookBookApp/Pods-CookBookApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE1933841B6A37EF002F4FCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CE1933911B6A37EF002F4FCB /* AppDelegate.m in Sources */,
+				CEEDCE6A1B7B978B00C44D4E /* ImageZoomView.m in Sources */,
 				CEE134BD1B6BBC9300FD7E10 /* AboutTableViewController.m in Sources */,
 				CE1933F01B6A389D002F4FCB /* SimpleTableViewCell.m in Sources */,
+				CE510B2F1B736D0D00F4E95D /* AboutViewController.m in Sources */,
 				CE1933EF1B6A389D002F4FCB /* ShowRecipeViewController.m in Sources */,
 				CE1933E11B6A389D002F4FCB /* CategoriesTableViewCell.m in Sources */,
 				CE1933971B6A37EF002F4FCB /* ViewController.m in Sources */,
 				CE1933DC1B6A389D002F4FCB /* AllRecipesTableViewController.m in Sources */,
 				CE1934051B6A3C88002F4FCB /* CookBookApp.xcdatamodeld in Sources */,
+				CE510B2A1B734EB300F4E95D /* PathManager.m in Sources */,
 				CE19338E1B6A37EF002F4FCB /* main.m in Sources */,
 				CE1934361B6A5353002F4FCB /* RecipeCategory.m in Sources */,
 				CE1933E71B6A389D002F4FCB /* ImageProcessor.m in Sources */,
@@ -664,6 +749,7 @@
 		};
 		CE1933AF1B6A37EF002F4FCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 230B5FB9A5AFCB87B371E68E /* Pods-CookBookApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CookBookApp/Info.plist;
@@ -675,6 +761,7 @@
 		};
 		CE1933B01B6A37EF002F4FCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79F61346E12922D7846BCA82 /* Pods-CookBookApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CookBookApp/Info.plist;

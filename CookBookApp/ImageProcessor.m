@@ -8,6 +8,7 @@
 
 #import "ImageProcessor.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "PathManager.h"
 
 @implementation ImageProcessor
 
@@ -56,6 +57,30 @@
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
+    return newImage;
+}
+
++(UIImage *) createFullScreenImageFromImage: (UIImage *) image inFrame: (CGRect)frame{
+    CGSize oldSize = image.size;
+    CGSize newSize = frame.size;
+   
+    CGFloat scaleFactor;
+    
+    if (!CGSizeEqualToSize(newSize, oldSize)) {
+        CGFloat widthFactor = newSize.width/oldSize.width;
+        CGFloat heightFactor = newSize.height/oldSize.height;
+        
+        if (widthFactor > heightFactor) {
+            scaleFactor = widthFactor;
+        }
+        else{
+            scaleFactor = heightFactor;
+        }
+        newSize.width = scaleFactor*oldSize.width;
+        newSize.height = scaleFactor*oldSize.height;
+    }
+    
+    UIImage *newImage = [self drawImage:image InContextWithSize:newSize];
     return newImage;
 }
 

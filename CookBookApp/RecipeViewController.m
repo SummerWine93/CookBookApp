@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #import "ImageProcessor.h"
 #import <ImageIO/ImageIO.h>
+#import "PathManager.h"
 
 @interface RecipeViewController ()
 
@@ -49,6 +50,11 @@
     self.recipeName.inputAccessoryView = [self toolBar];
     self.recipeSteps.inputAccessoryView = [self toolBar];
     self.recipeIngredients.inputAccessoryView = [self toolBar];
+    
+    [self.categoryTable setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero] ];
+    [self adjustHeightOfTableView];
+    
+    [self registerForKeyboardNotifications];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -194,18 +200,29 @@
 }
 
 -(void)setImageForObject: (NSManagedObject *)newManagedObject{
+    /*
     if ([newManagedObject valueForKey:@"recipeId"] == nil) {
         NSString *UUID = [[NSUUID UUID] UUIDString];
         [newManagedObject setValue:UUID forKey:@"recipeId"];
     }
+     */
     
     if (self.recipeImage.image != nil) {
-        //NSUInteger randomValueForName = arc4random_uniform((unsigned)RAND_MAX + 1);
-        //NSString *name = [NSString stringWithFormat:@"img_%lu.png", (unsigned long)randomValueForName];
         NSString *name = [NSString stringWithFormat:@"img_%@.png", [newManagedObject valueForKey:@"recipeId"]];
+        NSString *tname = [NSString stringWithFormat:@"t_img_%@.png", [newManagedObject valueForKey:@"recipeId"]];
+        
+        NSError *error = nil;
+        
+        NSString *timagePath = [PathManager pathInDocumentsDirectoryForName:tname];
+        [[NSFileManager defaultManager] removeItemAtPath:timagePath error:&error];
+        NSString *imagePath = [PathManager pathInDocumentsDirectoryForName:name];
+        [[NSFileManager defaultManager] removeItemAtPath:imagePath error:&error];
+        
+        NSLog(@"%@", [error localizedDescription]);
         [newManagedObject setValue:name forKey:@"image"];
         //Creating the image to be used later
         [ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:NO];
+        [ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:YES];
     }
     [self.managedObjectContext save:nil];
 }
@@ -283,6 +300,7 @@
     [self.managedObjectContext reset];
     self.managedObjectContext = nil;
     self.categoryFetchedResultsController = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(UIToolbar *)toolBar{
@@ -306,5 +324,54 @@
     typeOfDishChanged = YES;
 }
 
+#pragma mark - Kyeboard scroller
+
+-(void)registerForKeyboardNotifications{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWasShown:(NSNotification *)notification{
+    // Step 1: Get the size of the keyboard.
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    
+    // Step 2: Adjust the bottom content inset of your scroll view by the keyboard height.
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
+    
+    // Step 3: Scroll the target text field into view.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= keyboardSize.height;
+    if (!CGRectContainsPoint(aRect, self.activeTextField.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, self.activeTextField.frame.origin.y - (keyboardSize.height-15));
+        [self.scrollView setContentOffset:scrollPoint animated:YES];
+    }
+}
+
+- (void) keyboardWillHide:(NSNotification *)notification {
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.activeTextField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.activeTextField = nil;
+}
+
+-(void)adjustHeightOfTableView{
+    CGRect frame = self.categoryTable.frame;
+    frame.size.height = self.categoryTable.contentSize.height;
+    self.categoryTable.frame = frame;
+}
 
 @end

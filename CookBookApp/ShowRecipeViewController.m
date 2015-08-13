@@ -8,12 +8,14 @@
 
 #import "ShowRecipeViewController.h"
 #import "FullSizeImageViewController.h"
+#include <XLMediaZoom.h>
+#import "PathManager.h"
+#import "ImageZoomView.h"
 
 @interface ShowRecipeViewController (){
-    Recipe *object;    
+    Recipe *object;
+    BOOL imageWasChanged;
 }
-
-
 @end
 
 
@@ -32,12 +34,17 @@ const int deleteAlertTag = 999;
     
     self.recipeSteps.delegate = self;
     self.recipeIngredients.delegate = self;
+    
+    if (self.optionsMenuView.isHidden) {
+        [self switchEditingModeView];
+    }
+    imageWasChanged = NO;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self reloadInputViews];
-    
+    //[self.navigationController setToolbarHidden:NO];
 }
 
 
@@ -65,6 +72,7 @@ const int deleteAlertTag = 999;
     self.typeOfDish.userInteractionEnabled = !self.typeOfDish.isUserInteractionEnabled;
     imagePickerGestureRecogniser.enabled = YES;
     self.typePickerView.hidden = YES;
+    imageWasChanged = NO;
 }
 
 - (IBAction)addRecipeToFavourite:(id)sender {
@@ -99,8 +107,12 @@ const int deleteAlertTag = 999;
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if ([alertView.title  isEqual: @"Warning"]) {
         switch (buttonIndex) {
-            case 1:
+            case 1:{
                 object = [context existingObjectWithID:self.objectId error:nil];
+                
+                NSError *error = nil;
+                NSString *imagePath = [PathManager pathInDocumentsDirectoryForName:object.image];
+                [[NSFileManager defaultManager] removeItemAtPath:imagePath error:&error];                
                 [context deleteObject:object];
                 [context save:nil];
                 
@@ -108,6 +120,7 @@ const int deleteAlertTag = 999;
                 [alert show];
                 [self.navigationController popToRootViewControllerAnimated:YES];
                 break;
+            }
             default:
                 break;
         }
@@ -126,8 +139,8 @@ const int deleteAlertTag = 999;
 }
 
 - (IBAction)cancelChanges:(id)sender {
-    [self viewDidLoad];
     [self switchEditingModeView];
+    [self viewDidLoad];    
 }
 
 #pragma mark -
@@ -148,21 +161,21 @@ const int deleteAlertTag = 999;
         self.recipeSteps.text = object.steps;
     [self.typeOfDish setTitle:object.category.name forState:UIControlStateNormal];
     // Loading the image
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:object.image];
+    
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     if (image != nil) {
         self.recipeImage.image = image;
     }
     // if there is no image the app loads a fefault one for it and sets it as recipeImage
     else{
-        //NSString *imageName = [[NSString stringWithFormat:@"%@.png", object.name] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         self.recipeImage.image = [UIImage imageNamed:object.image];
         if (self.recipeImage.image == nil) {
             self.recipeImage.image = [UIImage imageNamed:@"defaultImage.jpg"];
-        }       
-        
+        }
         [self.view setNeedsDisplay];
         [self updateRecipe];
     }
@@ -176,29 +189,73 @@ const int deleteAlertTag = 999;
 }
 
 -(void)updateRecipe{
-        
     object.name = self.recipeName.text;
     object.ingredients = self.recipeIngredients.text;
     object.steps = self.recipeSteps.text;
     if (typeOfDishChanged) {
         [self setTypeOfDishForObject: object];
     }
-    [self setImageForObject:object];    
+    if (imageWasChanged) {
+        [self setImageForObject: object];
+    }
 }
 
 
 -(IBAction)imageTapped:(id)sender{
     if (self.optionsMenuView.isHidden) {
         [self changeRecipeImage:object];
+        imageWasChanged = YES;
     }
     else{
         FullSizeImageViewController *imageViewController = [FullSizeImageViewController new];
-        self.scrollView.hidden = NO;
         imageViewController.scrollView = self.scrollView;
-        //imageViewController
+        imageViewController.imageName = object.name;
+        //self.iv = [[UIImageView alloc] initWithImage:self.recipeImage.image];
+        self.iv = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 10, self.view.frame.origin.y + 100, 300, 300)];
+        [self.iv setImage:self.recipeImage.image];
+        //self.iv.backgroundColor = [UIColor redColor];
+        //self.scrollView.backgroundColor = [UIColor blackColor];
+        //[self.navigationController.topViewController.view addSubview:self.iv];
+        //XLMediaZoom *imageZoom = [[XLMediaZoom alloc] initWithAnimationTime:@(0.2) image:self.iv blurEffect:YES];
+        //[imageZoom setPreservesSuperviewLayoutMargins:YES];
+        //[self.navigationController.topViewController.view addSubview:imageZoom];
+        //[imageZoom show];
+        
+        ImageZoomView *izv = [[ImageZoomView alloc] initWithFrame:
+                              CGRectMake(self.view.frame.origin.x,
+                                         self.view.frame.origin.y,
+                                         self.view.frame.size.width,
+                                         self.view.frame.size.height) andImage:self.recipeImage.image];
+        [self.navigationController.topViewController.view addSubview:izv];
+        
+        
+        //alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:@"IMAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        //[alert setFrame:CGRectMake(self.view.frame.origin.x + 10, self.view.frame.origin.y + 100, self.view.frame.size.width - 10, 300)];
+        if (floor(NSFoundationVersionNumber)>NSFoundationVersionNumber_iOS_6_1) {
+            [alert setValue:self.iv forKey:@"accessoryView"];
+        }
+        else{
+            [alert addSubview:self.iv];
+        }
+        [alert show];
+        alert.frame = CGRectMake(self.view.frame.origin.x + 10, self.view.frame.origin.y + 100, self.view.frame.size.width - 10, 300);
+        
+        [self.view setNeedsDisplay];
+        NSLog(@"Click!");
         
     }
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    if (self.optionsMenuView.isHidden) {
+        //[self switchEditingModeView];
+    }
+    [super viewDidDisappear:animated];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [self switchEditingModeView];
+    NSLog(@"SEGUE");
+}
 
 @end
