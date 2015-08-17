@@ -7,7 +7,6 @@
 //
 
 #import "ShowRecipeViewController.h"
-#import "FullSizeImageViewController.h"
 #include <XLMediaZoom.h>
 #import "PathManager.h"
 #import "ImageZoomView.h"
@@ -28,10 +27,11 @@ const int deleteAlertTag = 999;
     [super viewDidLoad];
     [self.recipeImage setValue:nil forKey:@"image"];
     [self.recipeImage addObserver:self forKeyPath:@"image" options:0 context:nil];
-    [self fillThePageWithData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self fillThePageWithData];
+    });
     [self useFavouriteViewSettings];
     self.optionsView.layer.cornerRadius = 5;
-    
     self.recipeSteps.delegate = self;
     self.recipeIngredients.delegate = self;
     
@@ -107,8 +107,11 @@ const int deleteAlertTag = 999;
     if ([alertView.title  isEqual: @"Warning"]) {
         switch (buttonIndex) {
             case 1:{
-                recipe = [context existingObjectWithID:self.objectId error:nil];
-                [[NSNotificationCenter defaultCenter] removeObserver:self];
+                @try {
+                    [self.recipeImage removeObserver:self forKeyPath:@"image"];
+                }
+                @catch (NSException *exception) { }
+                recipe = [context existingObjectWithID:self.objectId error:nil];                
                 NSError *error = nil;
                 NSString *imagePath = [PathManager pathInDocumentsDirectoryForName:recipe.image];
                 [[NSFileManager defaultManager] removeItemAtPath:imagePath error:&error];                
@@ -170,10 +173,7 @@ const int deleteAlertTag = 999;
     }
     // if there is no image the app loads a fefault one for it and sets it as recipeImage
     else{
-        //self.recipeImage.image = [UIImage imageNamed:object.image];
-        [self.recipeImage setValue:[UIImage imageNamed:recipe.image] forKey:@"image"];
-        //[self updateRecipe];
-        //[self setRecipeImage:self.recipeImage];
+        [self.recipeImage setValue:[UIImage imageNamed:recipe.image] forKey:@"image"];        
     }
     // Here the size for the textbox is set dynamically
     CGSize sizeForRecipeSteps = [self.recipeSteps sizeThatFits: self.recipeSteps.textContainer.size];
@@ -204,9 +204,6 @@ const int deleteAlertTag = 999;
         imageWasChanged = YES;
     }
     else{
-        FullSizeImageViewController *imageViewController = [FullSizeImageViewController new];
-        imageViewController.scrollView = self.scrollView;
-        imageViewController.imageName = recipe.name;
         //XLMediaZoom *imageZoom = [[XLMediaZoom alloc] initWithAnimationTime:@(0.2) image:self.iv blurEffect:YES];
         //[imageZoom setPreservesSuperviewLayoutMargins:YES];
         //[self.navigationController.topViewController.view addSubview:imageZoom];
@@ -252,13 +249,13 @@ const int deleteAlertTag = 999;
 
 -(void)viewWillDisappear:(BOOL)animated{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [self.recipeImage removeObserver:self forKeyPath:@"image"];
+    @try {
+        [self.recipeImage removeObserver:self forKeyPath:@"image"];
+    }
+    @catch (NSException *exception) { }
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    if (self.optionsMenuView.isHidden) {
-        //[self switchEditingModeView];
-    }
+-(void)viewDidDisappear:(BOOL)animated{    
     [super viewDidDisappear:animated];
 }
 

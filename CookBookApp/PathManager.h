@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PathManager : NSObject
+@interface PathManager : NSObject{
+    NSString *documentsPath;
+}
 
+@property (nonatomic, retain) NSString *documentsPath;
 + (NSString *)pathInDocumentsDirectoryForName: (NSString *)fileName;
++ (PathManager *)getInstance;
++(NSString *)documentsPathString;
 
 @end

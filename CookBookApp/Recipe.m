@@ -23,4 +23,9 @@
 @dynamic category;
 @dynamic recipeId;
 
+-(id)init{
+    return [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:self.managedObjectContext];
+}
+
 @end
+

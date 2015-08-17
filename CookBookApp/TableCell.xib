@@ -13,19 +13,9 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fCk-bG-hNY" id="NLr-on-Imj">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Jg-Ee-SNd">
-                        <rect key="frame" x="5" y="0.0" width="125" height="92"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="125" id="GZy-gh-tzu"/>
-                        </constraints>
-                        <variation key="widthClass=compact" misplaced="YES">
-                            <rect key="frame" x="-2" y="2" width="125" height="90"/>
-                        </variation>
-                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-Kt-7cp">
                         <rect key="frame" x="99" y="61" width="25" height="25"/>
-                        <state key="normal">
+                        <state key="normal" image="Bookmark-25.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <variation key="widthClass=compact" misplaced="YES">
@@ -33,7 +23,8 @@
                         </variation>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label fhifhoeifeirhfgoerihgoerighecfshdfjsdfvjshdycfjsyfgsjyfgeyfgwefhvjwyefywfgwyefwjhfvwjhefywefgwjefy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvp-wp-Rpv">
-                        <rect key="frame" x="128" y="14" width="430" height="21"/>
+                        <rect key="frame" x="138" y="14" width="420" height="21"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="highlightedColor"/>
                         <variation key="widthClass=compact" misplaced="YES">
@@ -41,7 +32,8 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0I-Zv-gfc">
-                        <rect key="frame" x="131" y="63" width="433" height="17"/>
+                        <rect key="frame" x="138" y="63" width="426" height="17"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <string key="text">Label fhifhoeifeirhfgoerihgoerigheb gurhg9uhee98gh9egheu ehg9erhg9ehge9hrg9erhg erhgt98erhg8rhg9eh er98ghe9rg9e8rge98rghe9 er8gu9 er</string>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,17 +42,28 @@
                             <rect key="frame" x="131" y="36" width="181" height="21"/>
                         </variation>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Jg-Ee-SNd">
+                        <rect key="frame" x="8" y="0.0" width="125" height="91"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="125" id="GZy-gh-tzu"/>
+                        </constraints>
+                        <variation key="widthClass=compact" misplaced="YES">
+                            <rect key="frame" x="-2" y="2" width="125" height="90"/>
+                        </variation>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="jvp-wp-Rpv" firstAttribute="top" secondItem="NLr-on-Imj" secondAttribute="topMargin" constant="6" id="0yv-pw-Yaa"/>
-                    <constraint firstItem="2Jg-Ee-SNd" firstAttribute="leading" secondItem="NLr-on-Imj" secondAttribute="leadingMargin" constant="-10" id="2tb-Sa-Q0N"/>
+                    <constraint firstItem="2Jg-Ee-SNd" firstAttribute="leading" secondItem="NLr-on-Imj" secondAttribute="leadingMargin" id="2tb-Sa-Q0N"/>
                     <constraint firstItem="2Jg-Ee-SNd" firstAttribute="top" secondItem="NLr-on-Imj" secondAttribute="top" id="4bl-50-jG5"/>
                     <constraint firstAttribute="trailingMargin" secondItem="jvp-wp-Rpv" secondAttribute="trailing" constant="1" id="SbP-B7-tv2"/>
                     <constraint firstItem="jvp-wp-Rpv" firstAttribute="leading" secondItem="2Jg-Ee-SNd" secondAttribute="trailing" constant="5" id="XN7-6j-BAl"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="2Jg-Ee-SNd" secondAttribute="bottom" constant="-6" id="Xiu-0R-ZVD"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="2Jg-Ee-SNd" secondAttribute="bottom" constant="-5" id="Xiu-0R-ZVD"/>
                     <constraint firstItem="e0I-Zv-gfc" firstAttribute="top" secondItem="jvp-wp-Rpv" secondAttribute="bottom" constant="28" id="bBq-zi-RWh"/>
                     <constraint firstItem="e0I-Zv-gfc" firstAttribute="trailing" secondItem="NLr-on-Imj" secondAttribute="trailingMargin" constant="5" id="dlA-95-Gpv"/>
-                    <constraint firstItem="e0I-Zv-gfc" firstAttribute="leading" secondItem="2Jg-Ee-SNd" secondAttribute="trailing" constant="8" symbolic="YES" id="xdS-ql-j0I"/>
+                    <constraint firstItem="e0I-Zv-gfc" firstAttribute="leading" secondItem="2Jg-Ee-SNd" secondAttribute="trailing" constant="5" id="xdS-ql-j0I"/>
                 </constraints>
             </tableViewCellContentView>
             <inset key="separatorInset" minX="15" minY="0.0" maxX="5" maxY="0.0"/>
@@ -73,4 +76,7 @@
             <point key="canvasLocation" x="323" y="197.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Bookmark-25.png" width="25" height="25"/>
+    </resources>
 </document>

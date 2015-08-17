@@ -9,8 +9,13 @@
 #import "RecipesTableViewController.h"
 #import "FavouriteRecipesTableViewController.h"
 #import "FavouriteRecipesTableViewController.h"
+#import "PathManager.h"
+#import "NSString+MD5.h"
+#import "FTWCache.h"
 
-@implementation RecipesTableViewController
+@implementation RecipesTableViewController{
+    NSMutableDictionary *recipeImages;
+}
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize categoryFetchResultsController = _categoryFetchResultsController;
@@ -151,6 +156,11 @@
 
 #pragma mark - Table specific appearence
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"TableCell";
     SimpleTableViewCell *cell;
@@ -159,31 +169,52 @@
     }
     Recipe *cellRecipe = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.recipeName.text = cellRecipe.name;
-    NSString *name = [NSString stringWithFormat:@"t_%@", cellRecipe.image];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:name];    
-    UIImage *image = [UIImage imageWithContentsOfFile:path];
-    if (image == nil) {
-        image = [UIImage imageNamed:cellRecipe.image];
-        if (image == nil) {
-            image = [UIImage imageNamed:@"defaultImage.jpg"];
-        }
-    }
-    [cell.recipeImage setImage:image];
     cell.recipeDetails.text = cellRecipe.ingredients;
+    //NSString *name = [NSString stringWithFormat:@"t_%@", cellRecipe.image];
     UIImage *favourite;
     if ([cellRecipe.isFavourite boolValue] == YES) {
         favourite = [UIImage imageNamed:@"like.png"];
     }
-    [cell.recipeIsFavouriteButton setImage:favourite forState:UIControlStateNormal];    
+    [cell.recipeIsFavouriteButton setImage:favourite forState:UIControlStateNormal];
     
-    favourite = nil;
-    image = nil;
+    
+    NSString *key = [cellRecipe.image MD5Hash];
+    NSData *data = [FTWCache objectForKey:key];
+    if (data) {
+        [cell.recipeImage setImage:[UIImage imageWithData:data]];
+    }
+    else{
+        cell.recipeImage.image = [UIImage imageNamed:@"loading-placeholder.png"];
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            
+            NSString *path = [PathManager pathInDocumentsDirectoryForName: cellRecipe.image];
+            //NSString *path = [NSString stringWithFormat:@"%@%@",[[PathManager getInstance] documentsPath], cellRecipe.image];
+            UIImage *image = [UIImage imageWithContentsOfFile:path];
+            if (image == nil) {
+                image = [UIImage imageNamed:cellRecipe.image];
+            }
+            
+            //[self.view setNeedsLayout];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [cell.recipeImage setImage:image];
+            });
+            
+        });
+
+    }
+    
+    
+    
+    
+    
+    //favourite = nil;
+    //image = nil;
     cellRecipe = nil;
-    documentsDirectory = nil;
-    path = nil;
-    paths = nil;
+    //documentsDirectory = nil;
+    //path = nil;
+    //paths = nil;
     
     return cell;
 }
