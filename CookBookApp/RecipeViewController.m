@@ -209,12 +209,12 @@
     
     if (self.recipeImage.image != nil) {
         NSString *name = [NSString stringWithFormat:@"img_%@.png", [newManagedObject valueForKey:@"recipeId"]];
-        NSString *tname = [NSString stringWithFormat:@"t_img_%@.png", [newManagedObject valueForKey:@"recipeId"]];
+        //NSString *tname = [NSString stringWithFormat:@"t_img_%@.png", [newManagedObject valueForKey:@"recipeId"]];
         
         NSError *error = nil;
         
-        NSString *timagePath = [PathManager pathInDocumentsDirectoryForName:tname];
-        [[NSFileManager defaultManager] removeItemAtPath:timagePath error:&error];
+        //NSString *timagePath = [PathManager pathInDocumentsDirectoryForName:tname];
+        //[[NSFileManager defaultManager] removeItemAtPath:timagePath error:&error];
         NSString *imagePath = [PathManager pathInDocumentsDirectoryForName:name];
         [[NSFileManager defaultManager] removeItemAtPath:imagePath error:&error];
         
@@ -222,7 +222,7 @@
         [newManagedObject setValue:name forKey:@"image"];
         //Creating the image to be used later
         [ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:NO];
-        [ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:YES];
+        //[ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:YES];
     }
     [self.managedObjectContext save:nil];
 }

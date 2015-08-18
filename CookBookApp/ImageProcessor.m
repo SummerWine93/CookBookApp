@@ -1,3 +1,4 @@
+
 //
 //  ImageProcessor.m
 //  CookBook v1
@@ -22,14 +23,15 @@
         newSize = CGSizeMake(125, 92);
     }
     else{
-        newSize = CGSizeMake(360, 214);
+        newSize = CGSizeMake(320, 240);
     }
     
     if (!CGSizeEqualToSize(newSize, oldSize)) {
         CGFloat widthFactor = newSize.width/oldSize.width;
         CGFloat heightFactor = newSize.height/oldSize.height;
         
-        if (widthFactor > heightFactor) {
+        //if (((widthFactor > heightFactor)||(heightFactor > 1))&&(widthFactor < 1)) {
+        if ((widthFactor > heightFactor)) {
             scaleFactor = widthFactor;
         }
         else{
@@ -44,17 +46,18 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:name];
     
-    UIImage *newImage = [self drawImage:image InContextWithSize:newSize];    
+    UIImage *newImage = nil;
+    newImage = [self drawImage:image InContextWithSize:newSize];
     [UIImagePNGRepresentation(newImage) writeToFile:path atomically:YES];
     
     return newImage;
 }
 
 +(UIImage *)drawImage: (UIImage *)image InContextWithSize: (CGSize) newSize {
+    UIImage *newImage;
     UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
-    
     [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     return newImage;
@@ -70,7 +73,7 @@
         CGFloat widthFactor = newSize.width/oldSize.width;
         CGFloat heightFactor = newSize.height/oldSize.height;
         
-        if (((widthFactor > heightFactor)||(heightFactor > 1))&&(widthFactor < 1)) {
+        if ((widthFactor > heightFactor)) {
             scaleFactor = widthFactor;
         }
         else{

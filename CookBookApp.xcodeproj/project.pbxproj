@@ -27,6 +27,7 @@
 		CE0FC8021B8206E200BA9C78 /* loading-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0FC8011B8206E200BA9C78 /* loading-placeholder.png */; };
 		CE0FC8071B821ADA00BA9C78 /* FTWCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC8041B821ADA00BA9C78 /* FTWCache.m */; };
 		CE0FC8081B821ADA00BA9C78 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC8061B821ADA00BA9C78 /* NSString+MD5.m */; };
+		CE0FC80B1B82265000BA9C78 /* UIImageView+Network.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0FC80A1B82265000BA9C78 /* UIImageView+Network.m */; };
 		CE19338E1B6A37EF002F4FCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19338D1B6A37EF002F4FCB /* main.m */; };
 		CE1933911B6A37EF002F4FCB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1933901B6A37EF002F4FCB /* AppDelegate.m */; };
 		CE1933971B6A37EF002F4FCB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1933961B6A37EF002F4FCB /* ViewController.m */; };
@@ -116,6 +117,8 @@
 		CE0FC8041B821ADA00BA9C78 /* FTWCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTWCache.m; sourceTree = "<group>"; };
 		CE0FC8051B821ADA00BA9C78 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		CE0FC8061B821ADA00BA9C78 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		CE0FC8091B82265000BA9C78 /* UIImageView+Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Network.h"; sourceTree = "<group>"; };
+		CE0FC80A1B82265000BA9C78 /* UIImageView+Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Network.m"; sourceTree = "<group>"; };
 		CE1933881B6A37EF002F4FCB /* CookBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE19338C1B6A37EF002F4FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE19338D1B6A37EF002F4FCB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -250,6 +253,14 @@
 				CE1934291B6A40C4002F4FCB /* CoreDataFiles */,
 				CE1933C81B6A389D002F4FCB /* ImageProcessor.h */,
 				CE1933C91B6A389D002F4FCB /* ImageProcessor.m */,
+				CEEDCE681B7B978B00C44D4E /* ImageZoomView.h */,
+				CEEDCE691B7B978B00C44D4E /* ImageZoomView.m */,
+				CE0FC8031B821ADA00BA9C78 /* FTWCache.h */,
+				CE0FC8041B821ADA00BA9C78 /* FTWCache.m */,
+				CE0FC8091B82265000BA9C78 /* UIImageView+Network.h */,
+				CE0FC80A1B82265000BA9C78 /* UIImageView+Network.m */,
+				CE0FC8051B821ADA00BA9C78 /* NSString+MD5.h */,
+				CE0FC8061B821ADA00BA9C78 /* NSString+MD5.m */,
 				CE510B281B734EB300F4E95D /* PathManager.h */,
 				CE510B291B734EB300F4E95D /* PathManager.m */,
 				CE19338F1B6A37EF002F4FCB /* AppDelegate.h */,
@@ -345,12 +356,6 @@
 		CE1934291B6A40C4002F4FCB /* CoreDataFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CEEDCE681B7B978B00C44D4E /* ImageZoomView.h */,
-				CEEDCE691B7B978B00C44D4E /* ImageZoomView.m */,
-				CE0FC8031B821ADA00BA9C78 /* FTWCache.h */,
-				CE0FC8041B821ADA00BA9C78 /* FTWCache.m */,
-				CE0FC8051B821ADA00BA9C78 /* NSString+MD5.h */,
-				CE0FC8061B821ADA00BA9C78 /* NSString+MD5.m */,
 				CE1934371B6A5354002F4FCB /* Recipe.h */,
 				CE1934381B6A5354002F4FCB /* Recipe.m */,
 				CE1934341B6A5353002F4FCB /* RecipeCategory.h */,
@@ -645,6 +650,7 @@
 				CE1933EE1B6A389D002F4FCB /* RecipeViewController.m in Sources */,
 				CE1933DB1B6A389D002F4FCB /* AddRecipeViewController.m in Sources */,
 				CE1933E21B6A389D002F4FCB /* CategoriesTableViewController.m in Sources */,
+				CE0FC80B1B82265000BA9C78 /* UIImageView+Network.m in Sources */,
 				CE1933ED1B6A389D002F4FCB /* RecipesTableViewController.m in Sources */,
 				CE0FC8071B821ADA00BA9C78 /* FTWCache.m in Sources */,
 			);
@@ -687,6 +693,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -731,6 +738,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -756,6 +764,7 @@
 			baseConfigurationReference = 230B5FB9A5AFCB87B371E68E /* Pods-CookBookApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMPRESS_PNG_FILES = NO;
 				INFOPLIST_FILE = CookBookApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -768,6 +777,7 @@
 			baseConfigurationReference = 79F61346E12922D7846BCA82 /* Pods-CookBookApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMPRESS_PNG_FILES = NO;
 				INFOPLIST_FILE = CookBookApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

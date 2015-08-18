@@ -32,7 +32,7 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0I-Zv-gfc">
-                        <rect key="frame" x="138" y="63" width="426" height="17"/>
+                        <rect key="frame" x="138" y="63" width="422" height="17"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <string key="text">Label fhifhoeifeirhfgoerihgoerigheb gurhg9uhee98gh9egheu ehg9erhg9ehge9hrg9erhg erhgt98erhg8rhg9eh er98ghe9rg9e8rge98rghe9 er8gu9 er</string>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -42,7 +42,7 @@
                             <rect key="frame" x="131" y="36" width="181" height="21"/>
                         </variation>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Jg-Ee-SNd">
+                    <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Jg-Ee-SNd">
                         <rect key="frame" x="8" y="0.0" width="125" height="91"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,7 +62,7 @@
                     <constraint firstItem="jvp-wp-Rpv" firstAttribute="leading" secondItem="2Jg-Ee-SNd" secondAttribute="trailing" constant="5" id="XN7-6j-BAl"/>
                     <constraint firstAttribute="bottomMargin" secondItem="2Jg-Ee-SNd" secondAttribute="bottom" constant="-5" id="Xiu-0R-ZVD"/>
                     <constraint firstItem="e0I-Zv-gfc" firstAttribute="top" secondItem="jvp-wp-Rpv" secondAttribute="bottom" constant="28" id="bBq-zi-RWh"/>
-                    <constraint firstItem="e0I-Zv-gfc" firstAttribute="trailing" secondItem="NLr-on-Imj" secondAttribute="trailingMargin" constant="5" id="dlA-95-Gpv"/>
+                    <constraint firstItem="e0I-Zv-gfc" firstAttribute="trailing" secondItem="NLr-on-Imj" secondAttribute="trailingMargin" constant="1" id="dlA-95-Gpv"/>
                     <constraint firstItem="e0I-Zv-gfc" firstAttribute="leading" secondItem="2Jg-Ee-SNd" secondAttribute="trailing" constant="5" id="xdS-ql-j0I"/>
                 </constraints>
             </tableViewCellContentView>

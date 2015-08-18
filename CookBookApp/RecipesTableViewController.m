@@ -1,4 +1,4 @@
-//
+     //
 //  RecipesTableViewController.m
 //  CookBook v1
 //
@@ -12,6 +12,7 @@
 #import "PathManager.h"
 #import "NSString+MD5.h"
 #import "FTWCache.h"
+
 
 @implementation RecipesTableViewController{
     NSMutableDictionary *recipeImages;
@@ -33,7 +34,7 @@
     
     [[self fetchedResultsController] performFetch:nil];
     [[self categoryFetchResultsController] performFetch:nil];
-    [self.tableView reloadData];    
+    //[self.tableView reloadData];
     
     UINib *cellNib = [UINib nibWithNibName:@"TableCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:@"TableCell"];
@@ -46,7 +47,7 @@
     [super viewDidAppear:animated];
     
     UITableView *tableView = self.tableView;
-    [tableView reloadData];
+    //[tableView reloadData];
     //[self updateTableView:tableView];
     
 }
@@ -179,22 +180,25 @@
     
     
     NSString *key = [cellRecipe.image MD5Hash];
-    NSData *data = [FTWCache objectForKey:key];
-    if (data) {
-        [cell.recipeImage setImage:[UIImage imageWithData:data]];
-    }
-    else{
+    //NSData *data = [FTWCache objectForKey:key];
+    //if (data) {
+    //    [cell.recipeImage setImage:[UIImage imageWithData:data]];
+    //}
+   // else{
         cell.recipeImage.image = [UIImage imageNamed:@"loading-placeholder.png"];
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
-            
             NSString *path = [PathManager pathInDocumentsDirectoryForName: cellRecipe.image];
             //NSString *path = [NSString stringWithFormat:@"%@%@",[[PathManager getInstance] documentsPath], cellRecipe.image];
-            UIImage *image = [UIImage imageWithContentsOfFile:path];
-            if (image == nil) {
-                image = [UIImage imageNamed:cellRecipe.image];
+            //UIImage *image = [UIImage imageWithContentsOfFile:path];
+            UIImage *image;
+            if([[NSFileManager defaultManager] fileExistsAtPath:path]){
+                image = [ImageProcessor drawImage:[UIImage imageWithContentsOfFile:path] InContextWithSize:CGSizeMake(128, 96)];
             }
-            
+            else{
+                image = [ImageProcessor drawImage:[UIImage imageNamed:cellRecipe.image] InContextWithSize:CGSizeMake(128, 96)];
+            }
+            //[FTWCache setObject:UIImagePNGRepresentation(image) forKey:key];
             //[self.view setNeedsLayout];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -203,7 +207,7 @@
             
         });
 
-    }
+   // }
     
     
     
