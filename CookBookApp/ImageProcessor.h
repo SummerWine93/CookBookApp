@@ -15,6 +15,7 @@
 
 +(UIImage *) createImageFromImage: (UIImage*)image WithName: (NSString *)name Thumbnail: (BOOL)isThumbnail;
 +(UIImage *)drawImage: (UIImage *)image InContextWithSize: (CGSize) newSize;
-+(UIImage *)createFullScreenImageFromImage: (UIImage *) image inFrame: (CGRect)frame;
++(UIImage *) createFullScreenImageFromImage: (UIImage *) image inFrame: (CGRect)frame;
++(UIImage *) createThumbnailImageFromImage: (UIImage *) image;
 
 @end

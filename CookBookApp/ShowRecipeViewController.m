@@ -10,13 +10,13 @@
 #include <XLMediaZoom.h>
 #import "PathManager.h"
 #import "ImageZoomView.h"
+#import "ImageProcessor.h"
 
 @interface ShowRecipeViewController (){
     Recipe *recipe;
     BOOL imageWasChanged;
 }
 @end
-
 
 @implementation ShowRecipeViewController
 
@@ -25,6 +25,12 @@ const int deleteAlertTag = 999;
 -(void)viewDidLoad{    
     self.recipeName.text = self.nameId;
     [super viewDidLoad];
+    @try {
+        [self.recipeImage removeObserver:self forKeyPath:@"image"];
+        [self.loadImageView removeObserver:self forKeyPath:@"image"];
+        imagePickerGestureRecogniser = nil;
+    }
+    @catch (NSException *exception) { }
     [self.recipeImage setValue:nil forKey:@"image"];
     [self.recipeImage addObserver:self forKeyPath:@"image" options:0 context:nil];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -34,6 +40,12 @@ const int deleteAlertTag = 999;
     self.optionsView.layer.cornerRadius = 5;
     self.recipeSteps.delegate = self;
     self.recipeIngredients.delegate = self;
+    self.toolBar.hidden = NO;
+    //[self.toolBar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
+    //[self.navigationController.view addSubview:self.toolBar];
+    self.scrollView.delegate = self;
+    self.scrollView.scrollEnabled = YES;
+    
     
     if (self.optionsMenuView.isHidden) {
         [self switchEditingModeView];
@@ -41,6 +53,11 @@ const int deleteAlertTag = 999;
     imageWasChanged = NO;
 }
 
+
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 2000);
+}
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -144,6 +161,7 @@ const int deleteAlertTag = 999;
 
 - (IBAction)cancelChanges:(id)sender {
     [self switchEditingModeView];
+    
     [self viewDidLoad];    
 }
 
@@ -173,10 +191,10 @@ const int deleteAlertTag = 999;
     }
     // if there is no image the app loads a fefault one for it and sets it as recipeImage
     else{
-        [self.recipeImage setValue:[UIImage imageNamed:recipe.image] forKey:@"image"];        
+        [self.recipeImage setValue:[ImageProcessor createFullScreenImageFromImage:[UIImage imageNamed:recipe.image]  inFrame:self.recipeImage.frame]forKey:@"image"];
     }
     // Here the size for the textbox is set dynamically
-    CGSize sizeForRecipeSteps = [self.recipeSteps sizeThatFits: self.recipeSteps.textContainer.size];
+    CGSize sizeForRecipeSteps = [self.recipeSteps sizeThatFits: self.recipeSteps.textContainer.size];    
     self.recipeStepsHeight.constant = sizeForRecipeSteps.height;
     [self.recipeSteps.layoutManager ensureLayoutForTextContainer:self.recipeSteps.textContainer];
     CGSize sizeForRecipeIngredients = [self.recipeIngredients sizeThatFits:self.recipeIngredients.textContainer.size];
@@ -237,7 +255,7 @@ const int deleteAlertTag = 999;
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     [self.imageZoomView setHidden:YES];
     self.imageZoomView = nil;
-    //[self viewDidAppear:YES];
+    [self viewDidAppear:YES];
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 }
 
@@ -251,6 +269,9 @@ const int deleteAlertTag = 999;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     @try {
         [self.recipeImage removeObserver:self forKeyPath:@"image"];
+        [self.loadImageView removeObserver:self forKeyPath:@"image"];
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        imagePickerGestureRecogniser = nil;
     }
     @catch (NSException *exception) { }
 }
@@ -262,6 +283,12 @@ const int deleteAlertTag = 999;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [self switchEditingModeView];
+    @try {
+        [self.recipeImage removeObserver:self forKeyPath:@"image"];
+        [self.loadImageView removeObserver:self forKeyPath:@"image"];
+        imagePickerGestureRecogniser = nil;
+    }
+    @catch (NSException *exception) { }
     NSLog(@"SEGUE");
 }
 

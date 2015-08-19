@@ -9,7 +9,9 @@
 #import "ImageZoomView.h"
 #import "ImageProcessor.h"
 
-@implementation ImageZoomView
+@implementation ImageZoomView{
+    UITapGestureRecognizer *tapRecogniser;
+}
 
 -(id)initWithFrame:(CGRect)frame andImage: (UIImage *)image{
     //UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(super.frame.origin.x, super.frame.origin.y, super.frame.size.width, super.frame.size.height)];
@@ -20,7 +22,7 @@
     [imageView setContentMode:UIViewContentModeScaleAspectFit];
     [imageView setImage:[ImageProcessor createFullScreenImageFromImage:image inFrame:frame]];
     [backgroundView addSubview:imageView];
-    UITapGestureRecognizer *tapRecogniser = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeZoomedView)];
+    tapRecogniser = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeZoomedView)];
     tapRecogniser.numberOfTapsRequired = 1;
     tapRecogniser.numberOfTouchesRequired = 1;
     tapRecogniser.delegate = self;
@@ -51,6 +53,16 @@
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return YES;
+}
+
+-(void)dealloc{
+    [self removeGestureRecognizer:tapRecogniser];
+    tapRecogniser = nil;
+}
+
+-(void)removeFromSuperview{
+    [self removeGestureRecognizer:tapRecogniser];
+    [super removeFromSuperview];
 }
 
 

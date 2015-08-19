@@ -23,15 +23,15 @@
         newSize = CGSizeMake(125, 92);
     }
     else{
-        newSize = CGSizeMake(320, 240);
+        newSize = CGSizeMake(640, 480);
     }
     
     if (!CGSizeEqualToSize(newSize, oldSize)) {
         CGFloat widthFactor = newSize.width/oldSize.width;
         CGFloat heightFactor = newSize.height/oldSize.height;
         
-        //if (((widthFactor > heightFactor)||(heightFactor > 1))&&(widthFactor < 1)) {
-        if ((widthFactor > heightFactor)) {
+        if (((widthFactor > heightFactor)||(heightFactor > 1))&&(widthFactor < 1)) {
+        //if ((widthFactor > heightFactor)) {
             scaleFactor = widthFactor;
         }
         else{
@@ -73,7 +73,7 @@
         CGFloat widthFactor = newSize.width/oldSize.width;
         CGFloat heightFactor = newSize.height/oldSize.height;
         
-        if ((widthFactor > heightFactor)) {
+        if (((widthFactor > heightFactor)||(heightFactor > 1))&&(widthFactor < 1)){
             scaleFactor = widthFactor;
         }
         else{
@@ -82,6 +82,30 @@
         newSize.width = scaleFactor*oldSize.width;
         newSize.height = scaleFactor*oldSize.height;
 }
+    
+    UIImage *newImage = [self drawImage:image InContextWithSize:newSize];
+    return newImage;
+}
+
++(UIImage *) createThumbnailImageFromImage: (UIImage *) image{
+    CGSize oldSize = image.size;
+    CGSize newSize;
+    CGFloat scaleFactor;
+    newSize = CGSizeMake(125, 92);
+    
+    if (!CGSizeEqualToSize(newSize, oldSize)) {
+        CGFloat widthFactor = newSize.width/oldSize.width;
+        CGFloat heightFactor = newSize.height/oldSize.height;
+        
+        if (((widthFactor > heightFactor)||(heightFactor > 1))&&(widthFactor < 1)){
+            scaleFactor = widthFactor;
+        }
+        else{
+            scaleFactor = heightFactor;
+        }
+        newSize.width = scaleFactor*oldSize.width;
+        newSize.height = scaleFactor*oldSize.height;
+    }
     
     UIImage *newImage = [self drawImage:image InContextWithSize:newSize];
     return newImage;

@@ -180,51 +180,36 @@
     
     
     NSString *key = [cellRecipe.image MD5Hash];
-    //NSData *data = [FTWCache objectForKey:key];
-    //if (data) {
-    //    [cell.recipeImage setImage:[UIImage imageWithData:data]];
-    //}
-   // else{
+    NSData *data = [FTWCache objectForKey:key];
+    if (data) {
+        [cell.recipeImage setImage:[UIImage imageWithData:data]];
+    }
+    else{
         cell.recipeImage.image = [UIImage imageNamed:@"loading-placeholder.png"];
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
             NSString *path = [PathManager pathInDocumentsDirectoryForName: cellRecipe.image];
-            //NSString *path = [NSString stringWithFormat:@"%@%@",[[PathManager getInstance] documentsPath], cellRecipe.image];
-            //UIImage *image = [UIImage imageWithContentsOfFile:path];
             UIImage *image;
             if([[NSFileManager defaultManager] fileExistsAtPath:path]){
-                image = [ImageProcessor drawImage:[UIImage imageWithContentsOfFile:path] InContextWithSize:CGSizeMake(128, 96)];
+                image = [ImageProcessor createThumbnailImageFromImage:[UIImage imageWithContentsOfFile:path]];
             }
             else{
-                image = [ImageProcessor drawImage:[UIImage imageNamed:cellRecipe.image] InContextWithSize:CGSizeMake(128, 96)];
+                image = [ImageProcessor createThumbnailImageFromImage:[UIImage imageNamed:cellRecipe.image]];
             }
-            //[FTWCache setObject:UIImagePNGRepresentation(image) forKey:key];
-            //[self.view setNeedsLayout];
-            
+            [FTWCache setObject:UIImagePNGRepresentation(image) forKey:key];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [cell.recipeImage setImage:image];
             });
-            
         });
-
-   // }
-    
-    
-    
-    
-    
-    //favourite = nil;
-    //image = nil;
+    }
+    favourite = nil;
     cellRecipe = nil;
-    //documentsDirectory = nil;
-    //path = nil;
-    //paths = nil;
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 96;
+    return 95;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

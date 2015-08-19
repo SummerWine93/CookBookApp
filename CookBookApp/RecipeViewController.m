@@ -59,9 +59,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    for (NSManagedObject *object in [self fetchedResultsController].fetchedObjects) {
-        NSLog(@"%@", [object valueForKey:@"name"]);
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -262,6 +259,11 @@
     if ([segue.identifier isEqualToString:@"showRecipe"]||[[segue destinationViewController] isKindOfClass:[RecipesTableViewController class]]) {
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
     }
+    @try {
+        [self.recipeImage removeObserver:self forKeyPath:@"image"];
+        [self.loadImageView removeObserver:self forKeyPath:@"image"];
+    }
+    @catch (NSException *exception) { }
 }
 
 -(void)managedObjectDidChange:(NSNotification *)nofication{
@@ -324,7 +326,7 @@
     typeOfDishChanged = YES;
 }
 
-#pragma mark - Kyeboard scroller
+#pragma mark - Keyboard scroller
 
 -(void)registerForKeyboardNotifications{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
@@ -373,5 +375,15 @@
     frame.size.height = self.categoryTable.contentSize.height;
     self.categoryTable.frame = frame;
 }
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    @try {
+        [self.recipeImage removeObserver:self forKeyPath:@"image"];
+        [self.loadImageView removeObserver:self forKeyPath:@"image"];
+    }
+    @catch (NSException *exception) { }
+}
+
 
 @end

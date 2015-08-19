@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIView *editMenuView;
 @property (weak, nonatomic) IBOutlet UIView *optionsMenuView;
 @property (weak, nonatomic) IBOutlet UIButton *favouriteButton;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (weak, nonatomic) IBOutlet UIImageView *cameraImage;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *recipeIngredientsHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *recipeStepsHeight;
