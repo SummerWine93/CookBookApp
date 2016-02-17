@@ -22,7 +22,9 @@
 @synthesize correspondingTableViewController;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];    
+	
+    [super viewDidLoad];
+	
     pickerData = [NSMutableArray new];
     self.correspondingTableViewController = [RecipesTableViewController new];
     self.typeOfDish.titleLabel.adjustsFontSizeToFitWidth = YES;
@@ -206,12 +208,7 @@
     
     if (self.recipeImage.image != nil) {
         NSString *name = [NSString stringWithFormat:@"img_%@.png", [newManagedObject valueForKey:@"recipeId"]];
-        //NSString *tname = [NSString stringWithFormat:@"t_img_%@.png", [newManagedObject valueForKey:@"recipeId"]];
-        
         NSError *error = nil;
-        
-        //NSString *timagePath = [PathManager pathInDocumentsDirectoryForName:tname];
-        //[[NSFileManager defaultManager] removeItemAtPath:timagePath error:&error];
         NSString *imagePath = [PathManager pathInDocumentsDirectoryForName:name];
         [[NSFileManager defaultManager] removeItemAtPath:imagePath error:&error];
         
@@ -219,9 +216,9 @@
         [newManagedObject setValue:name forKey:@"image"];
         //Creating the image to be used later
         [ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:NO];
-        //[ImageProcessor createImageFromImage: self.recipeImage.image WithName: name Thumbnail:YES];
     }
     [self.managedObjectContext save:nil];
+    [self.view setNeedsDisplay];
 }
 
 #pragma mark - Fetched results controller
@@ -324,6 +321,27 @@
         self.typePickerView.hidden = YES;
     }
     typeOfDishChanged = YES;
+}
+
+-(void)viewDidLayoutSubviews{
+	UIDevice * device = [UIDevice currentDevice];
+	switch(device.orientation)
+	{
+		case UIDeviceOrientationPortrait:
+			/* start special animation */
+			self.menuBarPosition.constant = 60;
+			break;
+		case UIDeviceOrientationLandscapeRight:
+			/* start special animation */
+			self.menuBarPosition.constant = 20;
+		case UIDeviceOrientationLandscapeLeft:
+			/* start special animation */
+			self.menuBarPosition.constant = 20;
+			break;
+			
+		default:
+			break;
+	};
 }
 
 #pragma mark - Keyboard scroller

@@ -12,7 +12,7 @@
 #include "SimpleTableViewCell.h"
 #import "AddRecipeViewController.h"
 
-@interface RecipesTableViewController : UITableViewController <NSCopying, NSFetchedResultsControllerDelegate, RecipeChangedDelegate, NSFetchedResultsControllerDelegate>{
+@interface RecipesTableViewController : UITableViewController <NSCopying, NSFetchedResultsControllerDelegate, RecipeChangedDelegate, NSFetchedResultsControllerDelegate, RecipesTableUpdateDelegate> {
     AppDelegate *sharedDelegate;    
 }
 
@@ -20,5 +20,8 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *categoryFetchResultsController;
 @property (strong, nonatomic) NSArray *categoryFetchResults;
+
+@property (weak, nonatomic) id imageInCache;
+@property (weak, nonatomic) id imageDidNotChange;
 
 @end

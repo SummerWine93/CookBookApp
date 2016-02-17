@@ -1,0 +1,95 @@
+/*
+ Localizable.strings
+ CookBookApp
+ 
+ Created by User on 11/10/15.
+ Copyright © 2015 User. All rights reserved.
+ */
+
+"TabBar.AllRecipes" = "All Recipes";
+
+"TabBar.Favourites" = "Favourites";
+
+"TabBar.Info" = "Info";
+
+
+"CategoriesTableView.PageTitle" = "Categories";
+
+
+"FavouritesTableView.PageTitle" = "Favourite recipes";
+
+
+"Categories.Desserts" = "Desserts";
+
+"Categories.Drinks" = "Drinks";
+
+"Categories.FirstCourse" = "First course";
+
+"Categories.MainCourse" = "Main course";
+
+"Categories.Other" = "Other";
+
+"Categories.Salads" = "Salads";
+
+
+"InfoView.LabelText1" = "Delphi Training Center\nManager: Valeriy Bilokonnyy\nAuthor: Anastasiia Yarovenko";
+
+"InfoView.LabelText2" = "Hello! This is the CookBook app. It containes some great recipes from the Internet.";
+
+"InfoView.LabelText3" = "You can add your own recipes to your cook book. Just choose the recipe category and click the '+' button.";
+
+"InfoView.LabelText4" = "Besides that you are free to edit all the recipes in your cook book. Just ckick edit button and change whatever you need.";
+
+
+"RecipeView.AddNewRecipeView.PageTitle" = "Add new recipe";
+
+"RecipeView.AddNewRecipeView.NameOfTheDishLabel" = "Name of the dish";
+
+"RecipeView.AddNewRecipeView.IngredientsLabel" = "Ingredients";
+
+"RecipeView.AddNewRecipeView.RecipeLabel" = "Recipe";
+
+"RecipeView.AddNewRecipeView.RecipeAddedAlert.Title" = "Info";
+
+"RecipeView.AddNewRecipeView.RecipeAddedAlert.Message" = "Recipe added";
+
+"RecipeView.AddNewRecipeView.RecipeAddedAlert.CancelButtonLabel" = "OK";
+
+"RecipeView.AddNewRecipeView.RecipeNotAddedAlert.Title" = "Warning";
+
+"RecipeView.AddNewRecipeView.RecipeNotAddedAlert.Message" = "Couldn't save your data";
+
+"RecipeView.AddNewRecipeView.RecipeNotAddedAlert.CancelButtonLabel" = "OK";
+
+
+"RecipeView.ImagePickerAlert.Title" = "Image picker";
+
+"RecipeView.ImagePickerAlert.Message" = "Set your own image";
+
+"RecipeView.ImagePickerAlert.ButtonLabel1" = "Capture a photo";
+
+"RecipeView.ImagePickerAlert.ButtonLabel2" = "Load from gallery";
+
+"RecipeView.ImagePickerAlert.CancelButtonLabel" = "Cancel";
+
+
+"RecipeView.ShowRecipeView.DeleteRecipeAlert.Title" = "Warning";
+
+"RecipeView.ShowRecipeView.DeleteRecipeAlert.Message" = "Do you want to delete this recipe?";
+
+"RecipeView.ShowRecipeView.DeleteRecipeAlert.ButtonLabel" = "YES";
+
+"RecipeView.ShowRecipeView.DeleteRecipeAlert.CancelButtonLabel" = "NO";
+
+"RecipeView.ShowRecipeView.RecipeDeletedAlert.Title" = "Info";
+
+"RecipeView.ShowRecipeView.RecipeDeletedAlert.Message" = "The recipe is deleted";
+
+"RecipeView.ShowRecipeView.RecipeDeletedAlert.CancelButton" = "OK";
+
+"RecipeView.ShowRecipeView.RecipeSavedAlert.Title" = "Info";
+
+"RecipeView.ShowRecipeView.RecipeSavedAlert.Message" = "The recipe is saved";
+
+"RecipeView.ShowRecipeView.RecipeSavedAlert.CancelButton" = "OK";
+

@@ -35,6 +35,8 @@
 @property (strong, nonatomic) NSFetchedResultsController *categoryFetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *menuBarPosition;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextView *recipeName;
 @property (weak, nonatomic) IBOutlet UIButton *typeOfDish;
@@ -48,6 +50,8 @@
 @property (weak, nonatomic) IBOutlet UIView *typePickerView;
 @property RecipesTableViewController *correspondingTableViewController;
 @property (weak, nonatomic) IBOutlet UITableView *categoryTable;
+
+@property (weak, nonatomic) id imageInCache;
 
 @property (weak, nonatomic) UITextField *activeTextField;
 

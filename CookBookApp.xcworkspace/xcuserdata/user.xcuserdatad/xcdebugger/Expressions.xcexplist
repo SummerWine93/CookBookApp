@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[RecipeViewController setImageForObject:]:RecipeViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.recipeImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RecipesTableViewController viewDidAppear:]:RecipesTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imageInCache">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

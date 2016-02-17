@@ -8,13 +8,11 @@
 
 #import "RecipesTableViewController.h"
 #import "FavouriteRecipesTableViewController.h"
-#import "FavouriteRecipesTableViewController.h"
 #import "PathManager.h"
 #import "NSString+MD5.h"
 #import "FTWCache.h"
 
-
-@implementation RecipesTableViewController{
+@implementation RecipesTableViewController {
     NSMutableDictionary *recipeImages;
 }
 
@@ -39,6 +37,7 @@
     UINib *cellNib = [UINib nibWithNibName:@"TableCell" bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:@"TableCell"];
     
+    
     [NSFetchedResultsController deleteCacheWithName:nil];    
     [self fillView];
 }
@@ -49,6 +48,13 @@
     UITableView *tableView = self.tableView;
     //[tableView reloadData];
     //[self updateTableView:tableView];
+    @try {
+        [recipeImages removeObjectForKey:self.imageInCache];
+        [self updateTableView:self.tableView];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Image was not changed");
+    }
     
 }
 
@@ -96,6 +102,9 @@
     if ([segue.identifier isEqualToString:@"showRecipe"]) {
         ShowRecipeViewController *vc = [segue destinationViewController];
         vc.objectId = [recipe objectID];
+        NSString *key = [recipe.image MD5Hash];
+        vc.imageInCache = [FTWCache objectForKey:key];
+        vc.updaterDelegate = self;
     }
     
     RecipeViewController *vc = [segue destinationViewController];
@@ -185,7 +194,7 @@
         [cell.recipeImage setImage:[UIImage imageWithData:data]];
     }
     else{
-        cell.recipeImage.image = [UIImage imageNamed:@"loading-placeholder.png"];
+        cell.recipeImage.image = [UIImage imageNamed:@"loading-placeholder.jpg"];
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
             NSString *path = [PathManager pathInDocumentsDirectoryForName: cellRecipe.image];
@@ -222,6 +231,17 @@
     [self.managedObjectContext reset];
     self.managedObjectContext = nil;
     self.categoryFetchResults = nil;
+    
+}
+
+-(void)removeImageFromCache:(id)imageInCache{
+    @try {
+        [FTWCache removeObjectForKey:self.imageInCache];
+        //[recipeImages ];
+    }
+    @catch (NSException *exception) {}
+    [self.tableView reloadData];
+    [self.view setNeedsDisplay];
 }
 
 @end

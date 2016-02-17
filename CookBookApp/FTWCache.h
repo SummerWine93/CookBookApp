@@ -11,6 +11,7 @@
 @interface FTWCache : NSObject
 
 + (void) resetCache;
++ (NSData*) removeObjectForKey:(NSString*)key;
 
 + (void) setObject:(NSData*)data forKey:(NSString*)key;
 + (id) objectForKey:(NSString*)key;

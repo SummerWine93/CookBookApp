@@ -40,6 +40,17 @@ static NSTimeInterval cacheTime =  (double)604800;
 	return nil;
 }
 
++ (NSData*) removeObjectForKey:(NSString*)key {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *filename = [self.cacheDirectory stringByAppendingPathComponent:key];
+    
+    if ([fileManager fileExistsAtPath:filename])
+    {
+        [fileManager removeItemAtPath:filename error:nil];
+    }
+    return nil;
+}
+
 + (void) setObject:(NSData*)data forKey:(NSString*)key {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSString *filename = [self.cacheDirectory stringByAppendingPathComponent:key];

@@ -15,6 +15,8 @@
 @interface ShowRecipeViewController (){
     Recipe *recipe;
     BOOL imageWasChanged;
+    BOOL updateThumbnail;
+    BOOL firstLoad;
 }
 @end
 
@@ -22,7 +24,8 @@
 
 const int deleteAlertTag = 999;
 
--(void)viewDidLoad{    
+-(void)viewDidLoad{
+    
     self.recipeName.text = self.nameId;
     [super viewDidLoad];
     @try {
@@ -35,14 +38,12 @@ const int deleteAlertTag = 999;
     [self.recipeImage addObserver:self forKeyPath:@"image" options:0 context:nil];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self fillThePageWithData];
+        [self useFavouriteViewSettings];
     });
-    [self useFavouriteViewSettings];
+    
     self.optionsView.layer.cornerRadius = 5;
     self.recipeSteps.delegate = self;
     self.recipeIngredients.delegate = self;
-    self.toolBar.hidden = NO;
-    //[self.toolBar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
-    //[self.navigationController.view addSubview:self.toolBar];
     self.scrollView.delegate = self;
     self.scrollView.scrollEnabled = YES;
     
@@ -51,17 +52,18 @@ const int deleteAlertTag = 999;
         [self switchEditingModeView];
     }
     imageWasChanged = NO;
+    
+    firstLoad = NO;
 }
 
-
--(void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 2000);
-}
 
 -(void)viewDidAppear:(BOOL)animated{
+    if (!firstLoad) {
+        [[[UIApplication sharedApplication] keyWindow] addSubview:self.menuBar];
+        firstLoad = YES;
+    }
+    self.menuBar.hidden = NO;
     [super viewDidAppear:animated];
-    [self reloadInputViews];
     
 }
 
@@ -107,6 +109,7 @@ const int deleteAlertTag = 999;
     else{
         [self.favouriteButton setImage:[UIImage imageNamed:@"fav-add.png"] forState:UIControlStateNormal];
     }
+    [self.view setNeedsDisplay];
 }
 
 
@@ -200,6 +203,27 @@ const int deleteAlertTag = 999;
     CGSize sizeForRecipeIngredients = [self.recipeIngredients sizeThatFits:self.recipeIngredients.textContainer.size];
     self.recipeIngredientsHeight.constant = sizeForRecipeIngredients.height;
     [self.recipeIngredients.layoutManager ensureLayoutForTextContainer:self.recipeIngredients.textContainer];
+    //[self.view addSubview:self.recipeIngredients];
+    //[self.view addSubview:self.recipeSteps];
+    //[self textViewDidChange:self.recipeSteps];
+    //[self textViewDidChange:self.recipeIngredients];
+    //[self.recipeIngredients sizeToFit];
+    //[self.recipeSteps sizeToFit];
+    //[self.view updateConstraints];
+    //CGRect frame = self.recipeIngredients.frame;
+    //frame.size.height = self.recipeIngredients.contentSize.height;
+    //self.recipeIngredients.frame = frame;
+    [self.view setNeedsDisplay];
+    
+}
+
+-(void)textViewDidChange:(UITextView *)textView{
+    //textView.scrollEnabled = NO;
+    CGFloat fixedWidth = textView.frame.size.width;
+    CGSize newSize = [textView sizeThatFits:CGSizeMake(fixedWidth, MAXFLOAT)];
+    CGRect newFrame = textView.frame;
+    newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
+    //textView.scrollEnabled = YES;
 }
 
 
@@ -218,8 +242,8 @@ const int deleteAlertTag = 999;
 
 -(IBAction)imageTapped:(id)sender{
     if (self.optionsMenuView.isHidden) {
-        [self changeRecipeImage:recipe];
         imageWasChanged = YES;
+        [self changeRecipeImage:recipe];
     }
     else{
         //XLMediaZoom *imageZoom = [[XLMediaZoom alloc] initWithAnimationTime:@(0.2) image:self.iv blurEffect:YES];
@@ -252,31 +276,49 @@ const int deleteAlertTag = 999;
 }
 
 
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-    [self.imageZoomView setHidden:YES];
-    self.imageZoomView = nil;
-    [self viewDidAppear:YES];
-    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+-(void)viewDidLayoutSubviews{
+	UIDevice * device = [UIDevice currentDevice];
+	switch(device.orientation)
+	{
+		case UIDeviceOrientationPortrait:
+			/* start special animation */
+			self.menuBarPosition.constant = 60;
+			break;
+		case UIDeviceOrientationLandscapeRight:
+			/* start special animation */
+			self.menuBarPosition.constant = 0;
+		case UIDeviceOrientationLandscapeLeft:
+			/* start special animation */
+			self.menuBarPosition.constant = 0;
+			break;
+			
+		default:
+			break;
+	};
+	[self.view setNeedsDisplay];
 }
 
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
-    [self addZoomedImageView];
-    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-}
 
 
 -(void)viewWillDisappear:(BOOL)animated{
+    //[self.menuBar removeFromSuperview];
+    self.menuBar.hidden = YES;
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     @try {
+        [self.updaterDelegate removeImageFromCache:nil];
         [self.recipeImage removeObserver:self forKeyPath:@"image"];
         [self.loadImageView removeObserver:self forKeyPath:@"image"];
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        //[[NSNotificationCenter defaultCenter] removeObserver:self];
         imagePickerGestureRecogniser = nil;
+        //if (imageWasChanged) {
+        
+        //}
     }
     @catch (NSException *exception) { }
 }
 
--(void)viewDidDisappear:(BOOL)animated{    
+-(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
 }
 
@@ -287,9 +329,23 @@ const int deleteAlertTag = 999;
         [self.recipeImage removeObserver:self forKeyPath:@"image"];
         [self.loadImageView removeObserver:self forKeyPath:@"image"];
         imagePickerGestureRecogniser = nil;
+        RecipesTableViewController *vc = [segue destinationViewController];
+        if (imageWasChanged) {
+           // vc.imageInCache = self.imageInCache;
+            //[self.updaterDelegate removeImageFromCache:nil];
+        }
+        else{
+            //vc.imageInCache = nil;
+        }
+        
     }
     @catch (NSException *exception) { }
     NSLog(@"SEGUE");
+}
+
+- (IBAction)changeRecipeImage:(id)sender{
+    imageWasChanged = YES;
+    [super changeRecipeImage:sender];
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{

@@ -1,0 +1,95 @@
+/*
+ Localizable.strings
+ CookBookApp
+ 
+ Created by User on 11/10/15.
+ Copyright © 2015 User. All rights reserved.
+ */
+
+"TabBar.AllRecipes" = "Всі рецепти";
+
+"TabBar.Favourites" = "Улюблені рецепти";
+
+"TabBar.Info" = "Інформація";
+
+
+"CategoriesTableView.PageTitle" = "Категорії";
+
+
+"FavouritesTableView.PageTitle" = "Улюблені рецепти";
+
+
+"Categories.Desserts" = "Десерти";
+
+"Categories.Drinks" = "Напої";
+
+"Categories.FirstCourse" = "Перші страви";
+
+"Categories.MainCourse" = "Другі страви";
+
+"Categories.Other" = "Інше";
+
+"Categories.Salads" = "Салати";
+
+
+"InfoView.LabelText1" = "Навчальний центр Delphi\nМенеджер: Валерій Білоконний\nАвтор: Анастасія Яровенко";
+
+"InfoView.LabelText2" = "Вітаю! Це додаток CookBook. Він вміщує в собі деякі відмінні рецепти з інтернету.";
+
+"InfoView.LabelText3" = "Ви можете додати свої власні рецепти до книги. Просто оберіть відповідну категорію та натисніть кнопку '+'.";
+
+"InfoView.LabelText4" = "Кроме того Вы волны редактировать все рецепты в Вашей книге. Просто нажмие кнопку редактирования и внесите нужные изменения.";
+
+
+"RecipeView.AddNewRecipeView.PageTitle" = "Добавление нового рецепта";
+
+"RecipeView.AddNewRecipeView.NameOfTheDishLabel" = "Название блюда";
+
+"RecipeView.AddNewRecipeView.IngredientsLabel" = "Ингредиенты";
+
+"RecipeView.AddNewRecipeView.RecipeLabel" = "Рецепт";
+
+"RecipeView.AddNewRecipeView.RecipeAddedAlert.Title" = "Информация";
+
+"RecipeView.AddNewRecipeView.RecipeAddedAlert.Message" = "Рецепт добавлен";
+
+"RecipeView.AddNewRecipeView.RecipeAddedAlert.CancelButtonLabel" = "Хорошо";
+
+"RecipeView.AddNewRecipeView.RecipeNotAddedAlert.Title" = "Предупреждение";
+
+"RecipeView.AddNewRecipeView.RecipeNotAddedAlert.Message" = "Не удалось сохранить информацию";
+
+"RecipeView.AddNewRecipeView.RecipeNotAddedAlert.CancelButtonLabel" = "Хорошо";
+
+
+"RecipeView.ImagePickerAlert.Title" = "Выбор изображения";
+
+"RecipeView.ImagePickerAlert.Message" = "Выберите изображение";
+
+"RecipeView.ImagePickerAlert.ButtonLabel1" = "Сделать фотографию";
+
+"RecipeView.ImagePickerAlert.ButtonLabel2" = "Загрузить из галереи";
+
+"RecipeView.ImagePickerAlert.CancelButtonLabel" = "Отмена";
+
+
+"RecipeView.ShowRecipeView.DeleteRecipeAlert.Title" = "Предупреждение";
+
+"RecipeView.ShowRecipeView.DeleteRecipeAlert.Message" = "Хотите ли вы удалить рецепт?";
+
+"RecipeView.ShowRecipeView.DeleteRecipeAlert.ButtonLabel" = "ДА";
+
+"RecipeView.ShowRecipeView.DeleteRecipeAlert.CancelButtonLabel" = "НЕТ";
+
+"RecipeView.ShowRecipeView.RecipeDeletedAlert.Title" = "Информация";
+
+"RecipeView.ShowRecipeView.RecipeDeletedAlert.Message" = "Рецепт удален";
+
+"RecipeView.ShowRecipeView.RecipeDeletedAlert.CancelButton" = "Хорошо";
+
+"RecipeView.ShowRecipeView.RecipeSavedAlert.Title" = "Информация";
+
+"RecipeView.ShowRecipeView.RecipeSavedAlert.Message" = "Рецепт сохранен";
+
+"RecipeView.ShowRecipeView.RecipeSavedAlert.CancelButton" = "Хорошо";
+
